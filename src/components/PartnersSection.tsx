@@ -32,15 +32,6 @@ const PartnersSection = () => {
       logoColor: "bg-green-600"
     },
     {
-      name: "Omniya",
-      type: "Collection & Logistics",
-      description: "Primary logistics and plastic collection services, partnering with specialized recyclers to ensure efficient material flow and processing.",
-      icon: Users,
-      category: "logistics",
-      logoText: "omniya",
-      logoColor: "bg-teal-500"
-    },
-    {
       name: "Al Ansari & Bhasin Trading Co.",
       type: "Uniform Manufacturing",
       description: "Established uniform manufacturer and supplier providing identity stripping services and expertise in PPE lifecycle management.",
