@@ -5,57 +5,62 @@ import { Handshake, Globe, Recycle, Award, Building2, Users } from "lucide-react
 const PartnersSection = () => {
   const partners = [
     {
-      name: "Kuwait Environmental Protection Agency",
-      type: "Government Partner",
-      description: "Providing regulatory guidance and environmental impact certification for the recycling initiative.",
-      icon: Building2,
-      category: "government"
-    },
-    {
-      name: "Green Kuwait Foundation",
-      type: "Environmental NGO",
-      description: "Supporting community outreach and sustainability education programs throughout Kuwait.",
-      icon: Globe,
-      category: "ngo"
-    },
-    {
-      name: "Advanced Polymer Recycling Co.",
-      type: "Technology Partner",
-      description: "State-of-the-art recycling facilities and innovative polymer processing technologies.",
+      name: "Wedplast",
+      type: "Recycling Technology",
+      description: "Advanced plastic recycling services including cleaning, crushing, shredding, and molding of PPE materials into new products.",
       icon: Recycle,
       category: "technology"
     },
     {
-      name: "Kuwait University - Environmental Sciences",
-      type: "Research Partner",
-      description: "Conducting research on PPE material lifecycle and sustainable disposal methods.",
-      icon: Award,
-      category: "academic"
+      name: "Beatouna",
+      type: "Comprehensive Recycling",
+      description: "Full-service recycling company specializing in plastic to raw material conversion, logistics coordination, PPE handling, and secure uniform destruction services.",
+      icon: Building2,
+      category: "technology"
     },
     {
-      name: "Regional Safety Equipment Suppliers",
-      type: "Industry Partner",
-      description: "Collaborative network of safety equipment manufacturers supporting circular economy principles.",
+      name: "Tadwire",
+      type: "Waste Stream Management",
+      description: "Recycling-focused company with expertise in plastics and expanding capabilities for diverse waste streams from industrial operations.",
+      icon: Recycle,
+      category: "technology"
+    },
+    {
+      name: "Omniya",
+      type: "Collection & Logistics",
+      description: "Primary logistics and plastic collection services, partnering with specialized recyclers to ensure efficient material flow and processing.",
       icon: Users,
+      category: "logistics"
+    },
+    {
+      name: "Al Ansari & Bhasin Trading Co.",
+      type: "Uniform Manufacturing",
+      description: "Established uniform manufacturer and supplier providing identity stripping services and expertise in PPE lifecycle management.",
+      icon: Award,
       category: "industry"
     },
     {
-      name: "Middle East Sustainability Consortium",
-      type: "Regional Partner",
-      description: "Regional coordination and best practices sharing for industrial sustainability initiatives.",
-      icon: Handshake,
-      category: "consortium"
+      name: "Fares Al-Dabbous & Sons Trading Co.",
+      type: "Safety Equipment Supplier",
+      description: "Major safety and industrial products supplier in Kuwait, specializing in uniforms, PPE, and technical gear with extensive market knowledge.",
+      icon: Building2,
+      category: "industry"
+    },
+    {
+      name: "Kiswa (KISWA KWT)",
+      type: "Social Enterprise",
+      description: "Innovative social enterprise focused on clothing and textile collection and reuse through digital app and portal-based solutions.",
+      icon: Globe,
+      category: "social"
     }
   ];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "government": return "bg-blue-500";
-      case "ngo": return "bg-green-500";
-      case "technology": return "bg-purple-500";
-      case "academic": return "bg-orange-500";
-      case "industry": return "bg-red-500";
-      case "consortium": return "bg-teal-500";
+      case "technology": return "bg-blue-500";
+      case "logistics": return "bg-green-500";
+      case "industry": return "bg-purple-500";
+      case "social": return "bg-orange-500";
       default: return "bg-gray-500";
     }
   };
@@ -112,7 +117,7 @@ const PartnersSection = () => {
           {/* Partnership Statistics */}
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             <div className="text-center p-6 bg-accent rounded-xl">
-              <div className="text-3xl font-bold text-foreground mb-2">6+</div>
+              <div className="text-3xl font-bold text-foreground mb-2">7</div>
               <div className="text-muted-foreground">Strategic Partners</div>
             </div>
             <div className="text-center p-6 bg-accent rounded-xl">
@@ -120,11 +125,11 @@ const PartnersSection = () => {
               <div className="text-muted-foreground">Local Processing</div>
             </div>
             <div className="text-center p-6 bg-accent rounded-xl">
-              <div className="text-3xl font-bold text-foreground mb-2">3</div>
-              <div className="text-muted-foreground">Research Studies</div>
+              <div className="text-3xl font-bold text-foreground mb-2">4</div>
+              <div className="text-muted-foreground">Recycling Facilities</div>
             </div>
             <div className="text-center p-6 bg-accent rounded-xl">
-              <div className="text-3xl font-bold text-foreground mb-2">15+</div>
+              <div className="text-3xl font-bold text-foreground mb-2">50+</div>
               <div className="text-muted-foreground">Years Combined Experience</div>
             </div>
           </div>
