@@ -82,9 +82,11 @@ const ESGSection = () => {
             <span className="block text-primary mt-2">ESG at KOC</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            KOC recognizes the importance of achieving strategic goals while protecting the environment 
-            and natural resources, as well as providing growth opportunities for individuals. Our ESG 
-            strategy aligns with the UN's 17 Sustainable Development Goals.
+            KPC is committed to integrating Environmental, Social, and Governance (ESG) principles 
+            into its daily operations and strategic planning. As outlined in Kuwait's New Vision 2035, 
+            our corporation recognizes the importance of achieving strategic goals while protecting the 
+            environment and natural resources, providing growth opportunities for individuals through 
+            our comprehensive ESG strategy aligned with the UN's 17 Sustainable Development Goals.
           </p>
         </div>
 
@@ -188,14 +190,15 @@ const ESGSection = () => {
               <div className="space-y-4 text-left">
                 <p className="text-muted-foreground">
                   <strong className="text-foreground">KPC Strategy 2040:</strong> 
-                  Enhancing KPC and its subsidiaries reputation by providing proactive services 
-                  on a unified global level, while ensuring an economically and environmentally 
-                  friendly mix of fuels to meet Kuwait's energy demands.
+                  Achieving a sustainable leadership position in the oil & gas industry through 
+                  world-class operational excellence standards, while meeting Kuwait's current and 
+                  future energy demands with an economically and environmentally friendly fuel mix.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">Circular Economy & Sustainability:</strong> 
-                  Supporting the journey towards sustainability through waste reduction, recycling, 
-                  and resource optimization programs aligned with our operational excellence goals.
+                  <strong className="text-foreground">Energy Transition & Sustainability:</strong> 
+                  Utilizing alternative and renewable energy sources when they add value to KPC businesses, 
+                  implementing digital transformation frameworks, and supporting circular economy initiatives 
+                  through waste reduction and recycling programs like this PPE recycling campaign.
                 </p>
               </div>
               <div className="bg-white/50 p-6 rounded-xl">
