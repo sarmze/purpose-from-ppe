@@ -143,26 +143,6 @@ const PartnersSection = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center animate-slide-up">
-            <Card className="shadow-elevated bg-gradient-corporate text-white p-8">
-              <h3 className="text-2xl font-bold mb-4">
-                Interested in Partnering with KOC?
-              </h3>
-              <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-                Join our growing network of sustainability partners and help expand the impact of our environmental initiatives across the region.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="mailto:partnerships@koc.com.kw"
-                  className="inline-block bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-smooth"
-                >
-                  Partnership Inquiries
-                </a>
-                <span className="text-white/80 self-center text-sm">partnerships@koc.com.kw</span>
-              </div>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
