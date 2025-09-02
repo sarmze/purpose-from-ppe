@@ -29,8 +29,12 @@ const Footer = () => {
                 recycling programs and environmental stewardship.
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-sustainability rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">KOC</span>
+                <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center p-2">
+                  <img 
+                    src="/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png" 
+                    alt="KOC Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <p className="font-semibold">Kuwait Oil Company</p>
