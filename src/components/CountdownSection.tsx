@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Clock, Calendar, Zap } from 'lucide-react';
 
 const CountdownSection = () => {
-  // Set collection period end date (you can modify this date)
-  const endDate = new Date('2024-12-31T23:59:59').getTime();
+  // Collection period: Started 2 weeks ago, runs for 3 months total
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - 14); // Started 2 weeks ago
+  const endDate = new Date(startDate);
+  endDate.setMonth(endDate.getMonth() + 3); // Runs for 3 months
+  const endDateTime = endDate.getTime();
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -15,7 +19,7 @@ const CountdownSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const distance = endDate - now;
+      const distance = endDateTime - now;
 
       if (distance > 0) {
         setTimeLeft({
@@ -30,7 +34,7 @@ const CountdownSection = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [endDate]);
+  }, [endDateTime]);
 
   const isUrgent = timeLeft.days <= 7;
   const isVeryUrgent = timeLeft.days <= 3;
@@ -113,7 +117,7 @@ const CountdownSection = () => {
           {/* End Date Info */}
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Calendar className="w-4 h-4" />
-            <span>Collection period ends: {new Date(endDate).toLocaleDateString('en-US', {
+            <span>Collection period ends: {endDate.toLocaleDateString('en-US', {
               weekday: 'long',
               year: 'numeric',
               month: 'long',
