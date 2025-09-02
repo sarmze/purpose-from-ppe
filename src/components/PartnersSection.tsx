@@ -9,49 +9,63 @@ const PartnersSection = () => {
       type: "Recycling Technology",
       description: "Advanced plastic recycling services including cleaning, crushing, shredding, and molding of PPE materials into new products.",
       icon: Recycle,
-      category: "technology"
+      category: "technology",
+      logoText: "Wedplast",
+      logoColor: "bg-blue-600"
     },
     {
       name: "Beatouna",
       type: "Comprehensive Recycling",
       description: "Full-service recycling company specializing in plastic to raw material conversion, logistics coordination, PPE handling, and secure uniform destruction services.",
       icon: Building2,
-      category: "technology"
+      category: "technology",
+      logoText: "Beatouna",
+      logoColor: "bg-teal-600"
     },
     {
       name: "Tadwire",
       type: "Waste Stream Management",
       description: "Recycling-focused company with expertise in plastics and expanding capabilities for diverse waste streams from industrial operations.",
       icon: Recycle,
-      category: "technology"
+      category: "technology",
+      logoText: "TadwiRe",
+      logoColor: "bg-green-600"
     },
     {
       name: "Omniya",
       type: "Collection & Logistics",
       description: "Primary logistics and plastic collection services, partnering with specialized recyclers to ensure efficient material flow and processing.",
       icon: Users,
-      category: "logistics"
+      category: "logistics",
+      logoText: "omniya",
+      logoColor: "bg-teal-500"
     },
     {
       name: "Al Ansari & Bhasin Trading Co.",
       type: "Uniform Manufacturing",
       description: "Established uniform manufacturer and supplier providing identity stripping services and expertise in PPE lifecycle management.",
       icon: Award,
-      category: "industry"
+      category: "industry",
+      logoText: "Al Ansari & Bhasin",
+      logoColor: "bg-slate-600"
     },
     {
       name: "Fares Al-Dabbous & Sons Trading Co.",
       type: "Safety Equipment Supplier",
       description: "Major safety and industrial products supplier in Kuwait, specializing in uniforms, PPE, and technical gear with extensive market knowledge.",
       icon: Building2,
-      category: "industry"
+      category: "industry",
+      logoText: "AIT ALDABBOUS",
+      logoColor: "bg-cyan-600"
     },
     {
       name: "Kiswa (KISWA KWT)",
       type: "Social Enterprise",
       description: "Innovative social enterprise focused on clothing and textile collection and reuse through digital app and portal-based solutions.",
       icon: Globe,
-      category: "social"
+      category: "social",
+      logoText: "KISWA",
+      logoColor: "bg-blue-500"
     }
   ];
 
@@ -94,8 +108,12 @@ const PartnersSection = () => {
                 <div className={`absolute top-0 left-0 right-0 h-1 ${getCategoryColor(partner.category)}`}></div>
                 
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 ${getCategoryColor(partner.category)} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-smooth`}>
-                    <partner.icon className="w-8 h-8 text-white" />
+                  <div className={`w-20 h-20 ${partner.logoColor} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-smooth shadow-lg`}>
+                    <div className="text-center">
+                      <div className="text-white font-bold text-xs leading-tight">
+                        {partner.logoText}
+                      </div>
+                    </div>
                   </div>
                   <Badge variant="outline" className="mb-3 text-xs">
                     {partner.type}
