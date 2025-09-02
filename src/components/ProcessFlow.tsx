@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { 
   HardHat, 
   Truck, 
@@ -11,11 +12,19 @@ import {
   ArrowDown,
   Shirt,
   UserMinus,
-  Heart
+  Heart,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 import recycledPotImage from "@/assets/recycled-helmet-pot.jpg";
 
 const ProcessFlow = () => {
+  const [selectedProcess, setSelectedProcess] = useState<'helmets' | 'coveralls' | null>(null);
+
+  const toggleProcess = (type: 'helmets' | 'coveralls') => {
+    setSelectedProcess(selectedProcess === type ? null : type);
+  };
+
   const helmetProcess = [
     {
       id: 1,
@@ -185,111 +194,140 @@ const ProcessFlow = () => {
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"> Sustainable Solutions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            Discover how your donated PPE follows different transformation journeys based on the type of equipment.
+            Click on each PPE type to discover their unique transformation journeys.
           </p>
-          
-          {/* PPE Type Overview */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            <Card className="p-6 border-2 border-blue-200 bg-blue-50/50">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
-                  <HardHat className="w-8 h-8 text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Safety Helmets</h3>
-              <p className="text-muted-foreground text-sm">
-                Recycled into office items like plant pots and furniture through advanced plastic processing
-              </p>
-            </Card>
-            
-            <Card className="p-6 border-2 border-emerald-200 bg-emerald-50/50">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
-                  <Shirt className="w-8 h-8 text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Coveralls</h3>
-              <p className="text-muted-foreground text-sm">
-                De-identified and donated to charitable organizations for community benefit
-              </p>
-            </Card>
-          </div>
         </div>
 
-        {/* Process Tabs */}
+        {/* Clickable PPE Cards */}
         <div className="max-w-6xl mx-auto">
-          <Tabs defaultValue="helmets" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="helmets" className="flex items-center space-x-2">
-                <HardHat className="w-4 h-4" />
-                <span>Safety Helmets Process</span>
-              </TabsTrigger>
-              <TabsTrigger value="coveralls" className="flex items-center space-x-2">
-                <Shirt className="w-4 h-4" />
-                <span>Coveralls Process</span>
-              </TabsTrigger>
-            </TabsList>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+            {/* Safety Helmets Card */}
+            <Card 
+              className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-lg border-2 ${
+                selectedProcess === 'helmets' 
+                  ? 'border-blue-500 bg-blue-50/50 shadow-lg' 
+                  : 'border-blue-200 bg-blue-50/30 hover:border-blue-300'
+              }`}
+              onClick={() => toggleProcess('helmets')}
+            >
+              <CardContent className="p-0">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                      <HardHat className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-xl font-bold mb-1">Safety Helmets</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Recycled into office items like plant pots
+                      </p>
+                    </div>
+                  </div>
+                  {selectedProcess === 'helmets' ? (
+                    <ChevronUp className="w-5 h-5 text-blue-500" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-blue-500" />
+                  )}
+                </div>
+              </CardContent>
+            </Card>
             
-            <TabsContent value="helmets">
-              <ProcessFlowComponent 
-                processSteps={helmetProcess}
-                title="Safety Helmet Recycling Journey"
-                description="From protective gear to sustainable office products"
-              />
-            </TabsContent>
-            
-            <TabsContent value="coveralls">
-              <ProcessFlowComponent 
-                processSteps={coverallProcess}
-                title="Coverall Donation Journey"
-                description="From workplace protection to community support"
-              />
-            </TabsContent>
-          </Tabs>
-        </div>
-
-        {/* Showcase Example - Only show for helmets tab */}
-        <div className="bg-card rounded-2xl p-8 shadow-xl border mt-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <Badge className="mb-4">Success Story</Badge>
-              <h3 className="text-2xl font-bold mb-4">
-                From Safety Helmet to Office Plant Pot
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                This yellow plant pot was once a safety helmet protecting a KOC worker. 
-                Through our recycling process, it has been transformed into a beautiful 
-                office accessory that brings life to workspaces while telling the story 
-                of sustainable innovation.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm">100% recycled safety helmet material</span>
+            {/* Coveralls Card */}
+            <Card 
+              className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-lg border-2 ${
+                selectedProcess === 'coveralls' 
+                  ? 'border-emerald-500 bg-emerald-50/50 shadow-lg' 
+                  : 'border-emerald-200 bg-emerald-50/30 hover:border-emerald-300'
+              }`}
+              onClick={() => toggleProcess('coveralls')}
+            >
+              <CardContent className="p-0">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center">
+                      <Shirt className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-xl font-bold mb-1">Coveralls</h3>
+                      <p className="text-muted-foreground text-sm">
+                        De-identified and donated to charities
+                      </p>
+                    </div>
+                  </div>
+                  {selectedProcess === 'coveralls' ? (
+                    <ChevronUp className="w-5 h-5 text-emerald-500" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-emerald-500" />
+                  )}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm">Certified food-safe plastic for plants</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm">Reduces landfill waste by 95%</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                <img 
-                  src={recycledPotImage} 
-                  alt="Recycled safety helmet transformed into office plant pot"
-                  className="w-full h-80 object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                  Recycled PPE
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Process Flow Dropdown */}
+          {selectedProcess && (
+            <div className="bg-card rounded-2xl p-8 shadow-xl border mb-8 animate-in slide-in-from-top-5 duration-300">
+              {selectedProcess === 'helmets' ? (
+                <ProcessFlowComponent 
+                  processSteps={helmetProcess}
+                  title="Safety Helmet Recycling Journey"
+                  description="From protective gear to sustainable office products"
+                />
+              ) : (
+                <ProcessFlowComponent 
+                  processSteps={coverallProcess}
+                  title="Coverall Donation Journey"
+                  description="From workplace protection to community support"
+                />
+              )}
+            </div>
+          )}
+
+          {/* Showcase Example - Only show when helmets is selected */}
+          {selectedProcess === 'helmets' && (
+            <div className="bg-card rounded-2xl p-8 shadow-xl border animate-in slide-in-from-bottom-5 duration-300">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <Badge className="mb-4">Success Story</Badge>
+                  <h3 className="text-2xl font-bold mb-4">
+                    From Safety Helmet to Office Plant Pot
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    This yellow plant pot was once a safety helmet protecting a KOC worker. 
+                    Through our recycling process, it has been transformed into a beautiful 
+                    office accessory that brings life to workspaces while telling the story 
+                    of sustainable innovation.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm">100% recycled safety helmet material</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm">Certified food-safe plastic for plants</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm">Reduces landfill waste by 95%</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                    <img 
+                      src={recycledPotImage} 
+                      alt="Recycled safety helmet transformed into office plant pot"
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                      Recycled PPE
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
