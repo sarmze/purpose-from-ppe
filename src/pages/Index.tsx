@@ -9,7 +9,7 @@ import StoriesBoard from "@/components/StoriesBoard";
 import CampaignVideos from "@/components/CampaignVideos";
 import IncentivesSection from "@/components/IncentivesSection";
 import ImpactDashboard from "@/components/ImpactDashboard";
-import GrandEventSection from "@/components/GrandEventSection";
+{/* import GrandEventSection from "@/components/GrandEventSection"; */}
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -26,7 +26,7 @@ const Index = () => {
       <ImpactDashboard />
       <CampaignVideos />
       <IncentivesSection />
-      <GrandEventSection />
+      {/* <GrandEventSection /> */}
       <Footer />
     </div>
   );
