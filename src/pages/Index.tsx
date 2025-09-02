@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import CollectionMap from "@/components/CollectionMap";
 import DonationForm from "@/components/DonationForm";
 import StoriesBoard from "@/components/StoriesBoard";
 import CampaignVideos from "@/components/CampaignVideos";
@@ -15,6 +16,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <HowItWorksSection />
+      <CollectionMap />
       <DonationForm />
       <StoriesBoard />
       <ImpactDashboard />
