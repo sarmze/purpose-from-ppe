@@ -48,6 +48,18 @@ const HowItWorksSection = () => {
             </p>
           </div>
 
+          {/* CTA */}
+          <div className="text-center mb-16 animate-slide-up">
+            <div className="p-8 bg-accent rounded-2xl shadow-corporate">
+              <h3 className="text-2xl font-bold mb-4 text-accent-foreground">
+                Ready to Make an Impact?
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Start your PPE recycling journey today and be part of KOC's sustainability mission
+              </p>
+            </div>
+          </div>
+
           {/* Steps */}
           <div className="space-y-8">
             {steps.map((step, index) => (
@@ -84,17 +96,6 @@ const HowItWorksSection = () => {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-16 animate-slide-up">
-            <div className="p-8 bg-accent rounded-2xl shadow-corporate">
-              <h3 className="text-2xl font-bold mb-4 text-accent-foreground">
-                Ready to Make an Impact?
-              </h3>
-              <p className="text-lg text-muted-foreground mb-6">
-                Start your PPE recycling journey today and be part of KOC's sustainability mission
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
