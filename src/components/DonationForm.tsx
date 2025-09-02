@@ -99,11 +99,11 @@ const DonationForm = () => {
                 {/* Employee Details */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="employeeId">Employee ID</Label>
+                    <Label htmlFor="employeeId">KOC ID</Label>
                     <Input
                       id="employeeId"
                       type="text"
-                      placeholder="Enter your employee ID"
+                      placeholder="Enter your KOC ID"
                       value={formData.employeeId}
                       onChange={(e) => setFormData(prev => ({ ...prev, employeeId: e.target.value }))}
                       required
