@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import CountdownSection from "@/components/CountdownSection";
 import AboutSection from "@/components/AboutSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CollectionMap from "@/components/CollectionMap";
@@ -14,6 +15,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
+      <CountdownSection />
       <AboutSection />
       <HowItWorksSection />
       <CollectionMap />
