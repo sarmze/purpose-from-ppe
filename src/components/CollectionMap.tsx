@@ -11,15 +11,47 @@ const CollectionMap = () => {
   const [mapboxToken, setMapboxToken] = useState('');
   const [showTokenInput, setShowTokenInput] = useState(true);
 
-  // Collection bin locations - starting with the KOC Ahmadi MegaComplex
+  // Collection bin locations across KOC facilities
   const collectionBins = [
     {
       id: 'koc-ahmadi-mega',
       name: 'KOC Ahmadi MegaComplex (New)',
       address: '433H+G97, 11th Rd, Al Ahmadi 61008, Kuwait',
-      coordinates: [48.0282, 29.0779] as [number, number], // Approximate coordinates for KOC Ahmadi MegaComplex
+      coordinates: [48.0282, 29.0779] as [number, number],
       description: 'Main collection point at KOC headquarters',
       capacity: 'Large bins for helmets and coveralls'
+    },
+    {
+      id: 'west-kuwait-mega',
+      name: 'West Kuwait MegaComplex',
+      address: 'West Kuwait, Kuwait',
+      coordinates: [47.9200, 29.3375] as [number, number],
+      description: 'Primary collection facility for West Kuwait operations',
+      capacity: 'Large bins for helmets and coveralls'
+    },
+    {
+      id: 'north-kuwait-mega',
+      name: 'North Kuwait MegaComplex',
+      address: 'North Kuwait, Kuwait',
+      coordinates: [47.7000, 29.7500] as [number, number],
+      description: 'Main collection hub for North Kuwait facilities',
+      capacity: 'Large bins for helmets and coveralls'
+    },
+    {
+      id: 'magwa-main-office',
+      name: 'KOC Magwa Main Office Building',
+      address: 'Magwa, Kuwait',
+      coordinates: [48.1150, 28.9500] as [number, number],
+      description: 'Central office collection point in Magwa district',
+      capacity: 'Medium bins for helmets and coveralls'
+    },
+    {
+      id: 'koc-hse-ahmadi',
+      name: 'KOC HSE Building - Ahmadi',
+      address: 'HSE Building, Al Ahmadi, Kuwait',
+      coordinates: [48.0350, 29.0850] as [number, number],
+      description: 'Health, Safety & Environment building collection point',
+      capacity: 'Medium bins for helmets and coveralls'
     }
   ];
 
@@ -31,8 +63,8 @@ const CollectionMap = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v11',
-      center: [47.9824, 29.0919], // Kuwait center
-      zoom: 10,
+      center: [47.9824, 29.2919], // Kuwait center adjusted for better view
+      zoom: 8.5,
       pitch: 45,
     });
 
@@ -106,10 +138,9 @@ const CollectionMap = () => {
         const bounds = coordinates.reduce((bounds, coord) => {
           return bounds.extend(coord as [number, number]);
         }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
-        
         map.current!.fitBounds(bounds, {
-          padding: 50,
-          maxZoom: 12
+          padding: 80,
+          maxZoom: 10
         });
       }
     });
