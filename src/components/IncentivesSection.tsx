@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, FileCheck, Users, Star, Trophy, Gift } from "lucide-react";
+import { FileCheck, Users, Trophy } from "lucide-react";
 
 const IncentivesSection = () => {
   const incentives = [
@@ -30,11 +30,6 @@ const IncentivesSection = () => {
     }
   ];
 
-  const additionalRewards = [
-    { icon: Star, text: "Sustainability Leadership Award", color: "text-sustainability" },
-    { icon: Gift, text: "Exclusive KOC Eco-Friendly Merchandise", color: "text-primary" },
-    { icon: Award, text: "Employee of the Month Nominations", color: "text-sustainability" },
-  ];
 
   return (
     <section className="py-20 bg-background">
@@ -91,29 +86,6 @@ const IncentivesSection = () => {
             ))}
           </div>
 
-          {/* Additional Rewards */}
-          <div className="animate-slide-up">
-            <Card className="shadow-elevated bg-accent">
-              <CardHeader>
-                <CardTitle className="text-center text-2xl text-accent-foreground">
-                  Additional Recognition Opportunities
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {additionalRewards.map((reward, index) => (
-                    <div 
-                      key={index} 
-                      className="flex items-center gap-3 p-4 bg-background rounded-lg shadow-sm hover:shadow-md transition-smooth"
-                    >
-                      <reward.icon className={`w-6 h-6 ${reward.color}`} />
-                      <span className="font-medium text-foreground">{reward.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
           {/* Call to Action */}
           <div className="text-center mt-16 animate-slide-up">
