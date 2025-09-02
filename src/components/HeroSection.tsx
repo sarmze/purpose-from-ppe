@@ -2,6 +2,15 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
+  const scrollToHowItWorks = () => {
+    const howItWorksSection = document.getElementById('how-it-works');
+    if (howItWorksSection) {
+      howItWorksSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -28,7 +37,8 @@ const HeroSection = () => {
           <Button 
             variant="hero" 
             size="lg" 
-            className="animate-float text-xl px-12 py-6 h-auto"
+            className="animate-float text-xl px-12 py-6 h-auto cursor-pointer"
+            onClick={scrollToHowItWorks}
           >
             Learn How to Donate
           </Button>
