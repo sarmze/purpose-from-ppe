@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { User, Quote } from "lucide-react";
+import AudioPlayer from "./AudioPlayer";
 
 const StoriesBoard = () => {
   const stories = [
@@ -26,6 +27,7 @@ const StoriesBoard = () => {
       department: "Safety",
       story: "Every piece of PPE tells a story of protection. Now they continue protecting - our planet. Proud to be part of this initiative.",
       type: "audio",
+      audioUrl: "mock-audio-url-1", // In real app, this would be actual audio file URL
       date: "5 days ago"
     },
     {
@@ -50,6 +52,7 @@ const StoriesBoard = () => {
       department: "HR",
       story: "Participated in this campaign not just as an employee, but as a mother who cares about the world we leave behind.",
       type: "audio",
+      audioUrl: "mock-audio-url-2", // In real app, this would be actual audio file URL
       date: "2 weeks ago"
     }
   ];
@@ -105,6 +108,13 @@ const StoriesBoard = () => {
                     <p className="text-foreground leading-relaxed italic">
                       "{story.story}"
                     </p>
+                    
+                    {/* Audio Player for audio stories */}
+                    {story.type === 'audio' && (
+                      <div className="mt-3 p-3 bg-accent/50 rounded-lg">
+                        <AudioPlayer audioUrl={story.audioUrl} />
+                      </div>
+                    )}
                   </div>
 
                   {/* Footer */}

@@ -5,19 +5,21 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mic, MicOff, Send, CheckCircle } from "lucide-react";
+import { Mic, MicOff, Send, CheckCircle, Play, Pause, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useAudioRecorder } from "@/hooks/useAudioRecorder";
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
     employeeId: "",
     name: "",
     hasDonated: false,
-    story: "",
-    isRecording: false
+    story: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const { toast } = useToast();
+  const { isRecording, audioData, error, startRecording, stopRecording, clearRecording } = useAudioRecorder();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,11 +41,53 @@ const DonationForm = () => {
     });
   };
 
-  const toggleRecording = () => {
-    setFormData(prev => ({ ...prev, isRecording: !prev.isRecording }));
+  const handleRecordingToggle = async () => {
+    if (isRecording) {
+      stopRecording();
+      toast({
+        title: "Recording stopped",
+        description: "Your voice recording has been saved.",
+      });
+    } else {
+      await startRecording();
+      toast({
+        title: "Recording started",
+        description: "Start sharing your PPE story.",
+      });
+    }
+  };
+
+  const playAudio = () => {
+    if (audioData?.url) {
+      const audio = new Audio(audioData.url);
+      setIsPlaying(true);
+      
+      audio.onended = () => setIsPlaying(false);
+      audio.onerror = () => {
+        setIsPlaying(false);
+        toast({
+          title: "Playback error",
+          description: "Failed to play the audio recording.",
+          variant: "destructive"
+        });
+      };
+      
+      audio.play().catch(() => {
+        setIsPlaying(false);
+        toast({
+          title: "Playback error",
+          description: "Failed to play the audio recording.",
+          variant: "destructive"
+        });
+      });
+    }
+  };
+
+  const handleClearRecording = () => {
+    clearRecording();
     toast({
-      title: formData.isRecording ? "Recording stopped" : "Recording started",
-      description: formData.isRecording ? "Your voice recording has been saved." : "Start sharing your PPE story.",
+      title: "Recording cleared",
+      description: "Your voice recording has been removed.",
     });
   };
 
@@ -152,31 +196,77 @@ const DonationForm = () => {
                   />
 
                   {/* Voice Recording Option */}
-                  <div className="flex items-center justify-between p-4 border rounded-lg">
-                    <div>
-                      <p className="font-medium">Voice Recording</p>
-                      <p className="text-sm text-muted-foreground">
-                        Record a voice message instead of writing
-                      </p>
+                  <div className="space-y-4 p-4 border rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-medium">Voice Recording</p>
+                        <p className="text-sm text-muted-foreground">
+                          Record a voice message instead of writing
+                        </p>
+                      </div>
+                      <Button
+                        type="button"
+                        variant={isRecording ? "destructive" : "sustainability"}
+                        onClick={handleRecordingToggle}
+                        className="flex items-center gap-2"
+                        disabled={!!error}
+                      >
+                        {isRecording ? (
+                          <>
+                            <MicOff className="w-4 h-4" />
+                            Stop Recording
+                          </>
+                        ) : (
+                          <>
+                            <Mic className="w-4 h-4" />
+                            Start Recording
+                          </>
+                        )}
+                      </Button>
                     </div>
-                    <Button
-                      type="button"
-                      variant={formData.isRecording ? "destructive" : "sustainability"}
-                      onClick={toggleRecording}
-                      className="flex items-center gap-2"
-                    >
-                      {formData.isRecording ? (
-                        <>
-                          <MicOff className="w-4 h-4" />
-                          Stop Recording
-                        </>
-                      ) : (
-                        <>
-                          <Mic className="w-4 h-4" />
-                          Start Recording
-                        </>
-                      )}
-                    </Button>
+
+                    {/* Error Display */}
+                    {error && (
+                      <div className="text-sm text-destructive bg-destructive/10 p-2 rounded">
+                        {error}
+                      </div>
+                    )}
+
+                    {/* Audio Playback */}
+                    {audioData && (
+                      <div className="flex items-center justify-between bg-accent p-3 rounded">
+                        <div className="flex items-center gap-3">
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            onClick={playAudio}
+                            disabled={isPlaying}
+                            className="flex items-center gap-2"
+                          >
+                            {isPlaying ? (
+                              <Pause className="w-4 h-4" />
+                            ) : (
+                              <Play className="w-4 h-4" />
+                            )}
+                            {isPlaying ? "Playing..." : "Play"}
+                          </Button>
+                          <span className="text-sm text-muted-foreground">
+                            Duration: {Math.round(audioData.duration)}s
+                          </span>
+                        </div>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          onClick={handleClearRecording}
+                          className="flex items-center gap-2"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                          Remove
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
 
