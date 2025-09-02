@@ -1,0 +1,145 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Award, FileCheck, Users, Star, Trophy, Gift } from "lucide-react";
+
+const IncentivesSection = () => {
+  const incentives = [
+    {
+      title: "CEO Recognition",
+      description: "10 outstanding employees will be personally honored by the CEO at our grand campaign event",
+      icon: Trophy,
+      highlight: "Executive Level",
+      gradient: "bg-gradient-corporate",
+      benefits: ["Personal recognition by CEO", "Special ceremony appearance", "Company-wide announcement"]
+    },
+    {
+      title: "Green Champion Certificates",
+      description: "All participants receive beautiful digital certificates recognizing their sustainability contribution",
+      icon: FileCheck,
+      highlight: "For Everyone",
+      gradient: "bg-gradient-sustainability",
+      benefits: ["Digital certificate", "LinkedIn shareable", "Permanent recognition record"]
+    },
+    {
+      title: "Department Shoutouts",
+      description: "Leading departments get featured in company newsletters and internal communications",
+      icon: Users,
+      highlight: "Team Recognition",
+      gradient: "bg-gradient-corporate",
+      benefits: ["Newsletter features", "Team photos", "Leadership acknowledgment"]
+    }
+  ];
+
+  const additionalRewards = [
+    { icon: Star, text: "Sustainability Leadership Award", color: "text-sustainability" },
+    { icon: Gift, text: "Exclusive KOC Eco-Friendly Merchandise", color: "text-primary" },
+    { icon: Award, text: "Employee of the Month Nominations", color: "text-sustainability" },
+  ];
+
+  return (
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Recognition & Incentives
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Your participation doesn't go unnoticed. Join the initiative and be recognized for your contribution to sustainability
+            </p>
+          </div>
+
+          {/* Main Incentives */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {incentives.map((incentive, index) => (
+              <Card 
+                key={index} 
+                className="shadow-corporate hover:shadow-elevated transition-smooth animate-fade-in group relative overflow-hidden"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {/* Background Gradient */}
+                <div className={`absolute top-0 left-0 right-0 h-2 ${incentive.gradient}`}></div>
+                
+                <CardHeader className="text-center pt-8">
+                  <div className={`w-16 h-16 ${incentive.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-smooth`}>
+                    <incentive.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <Badge variant="secondary" className="mb-3">
+                    {incentive.highlight}
+                  </Badge>
+                  <CardTitle className="text-xl text-foreground">
+                    {incentive.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {incentive.description}
+                  </p>
+                  
+                  {/* Benefits List */}
+                  <div className="space-y-2">
+                    {incentive.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                        <span className="text-sm text-foreground">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Additional Rewards */}
+          <div className="animate-slide-up">
+            <Card className="shadow-elevated bg-accent">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl text-accent-foreground">
+                  Additional Recognition Opportunities
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {additionalRewards.map((reward, index) => (
+                    <div 
+                      key={index} 
+                      className="flex items-center gap-3 p-4 bg-background rounded-lg shadow-sm hover:shadow-md transition-smooth"
+                    >
+                      <reward.icon className={`w-6 h-6 ${reward.color}`} />
+                      <span className="font-medium text-foreground">{reward.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16 animate-slide-up">
+            <div className="p-8 bg-gradient-corporate rounded-2xl shadow-elevated">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Ready to Be Recognized?
+              </h3>
+              <p className="text-xl text-white/90 mb-6 max-w-3xl mx-auto">
+                Join the KOC PPE Recycling Initiative today and become part of our sustainability success story. 
+                Your contribution matters and will be celebrated.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="#donation" 
+                  className="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-smooth"
+                >
+                  Start Contributing Now
+                </a>
+                <span className="text-white/80 self-center">Limited time campaign - Act now!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default IncentivesSection;
