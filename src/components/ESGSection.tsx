@@ -187,22 +187,23 @@ const ESGSection = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4 text-left">
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">KPC's Energy Transition Strategy (2050):</strong> 
-                  Approved by the Board of Directors, this comprehensive approach to achieve long-term 
-                  sustainability goals while reducing environmental impact.
+                  <strong className="text-foreground">KPC Strategy 2040:</strong> 
+                  Enhancing KPC and its subsidiaries reputation by providing proactive services 
+                  on a unified global level, while ensuring an economically and environmentally 
+                  friendly mix of fuels to meet Kuwait's energy demands.
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">Circular Economy Initiatives:</strong> 
+                  <strong className="text-foreground">Circular Economy & Sustainability:</strong> 
                   Supporting the journey towards sustainability through waste reduction, recycling, 
-                  and resource optimization programs.
+                  and resource optimization programs aligned with our operational excellence goals.
                 </p>
               </div>
               <div className="bg-white/50 p-6 rounded-xl">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-sustainability mb-2">17</div>
-                  <div className="text-sustainability-dark font-medium">UN SDGs</div>
+                  <div className="text-4xl font-bold text-sustainability mb-2">2040</div>
+                  <div className="text-sustainability-dark font-medium">Strategy Timeline</div>
                   <div className="text-sm text-muted-foreground mt-2">
-                    Sustainable Development Goals Alignment
+                    Sustainable Leadership Position in Oil & Gas Industry
                   </div>
                 </div>
               </div>
