@@ -57,11 +57,11 @@ const ImpactDashboard = () => {
       description: "Based on collected materials avoiding landfill"
     },
     {
-      title: "New Plant Pots Created",
+      title: "Estimated Plant Pots",
       value: counters.plantsGrown.toLocaleString(),
       icon: TrendingUp,
       gradient: "bg-gradient-sustainability",
-      description: "From recycled safety helmets"
+      description: "Potential plant pots from collected helmets"
     }
   ];
 
