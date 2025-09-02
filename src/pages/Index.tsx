@@ -9,6 +9,7 @@ import StoriesBoard from "@/components/StoriesBoard";
 import CampaignVideos from "@/components/CampaignVideos";
 import IncentivesSection from "@/components/IncentivesSection";
 import ImpactDashboard from "@/components/ImpactDashboard";
+import PartnersSection from "@/components/PartnersSection";
 {/* import GrandEventSection from "@/components/GrandEventSection"; */}
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,7 @@ const Index = () => {
       <ImpactDashboard />
       <CampaignVideos />
       <IncentivesSection />
+      <PartnersSection />
       {/* <GrandEventSection /> */}
       <Footer />
     </div>
