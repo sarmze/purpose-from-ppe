@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import CountdownSection from "@/components/CountdownSection";
 import AboutSection from "@/components/AboutSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import ProcessFlow from "@/components/ProcessFlow";
 import CollectionMap from "@/components/CollectionMap";
 import DonationForm from "@/components/DonationForm";
 import StoriesBoard from "@/components/StoriesBoard";
@@ -21,6 +22,7 @@ const Index = () => {
       <CountdownSection />
       <AboutSection />
       <HowItWorksSection />
+      <ProcessFlow />
       <CollectionMap />
       <DonationForm />
       <StoriesBoard />
