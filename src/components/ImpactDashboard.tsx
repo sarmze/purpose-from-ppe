@@ -50,18 +50,18 @@ const ImpactDashboard = () => {
       description: "Repurposed for visitor line and charity donations"
     },
     {
-      title: "CO₂ Emissions Saved",
+      title: "CO₂ Emissions Prevented",
       value: `${counters.carbonSaved.toFixed(1)} tons`,
       icon: Leaf,
       gradient: "bg-gradient-corporate",
-      description: "Equivalent to planting 80 trees"
+      description: "Based on collected materials avoiding landfill"
     },
     {
-      title: "Plants Growing",
+      title: "New Plant Pots Created",
       value: counters.plantsGrown.toLocaleString(),
       icon: TrendingUp,
       gradient: "bg-gradient-sustainability",
-      description: "In recycled helmet planters across KOC"
+      description: "From recycled safety helmets"
     }
   ];
 
@@ -72,10 +72,10 @@ const ImpactDashboard = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Live Impact Dashboard
+              Collection Impact Dashboard
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Track our collective environmental impact in real-time
+              See the environmental impact achieved from our ongoing PPE collection efforts
             </p>
           </div>
 
@@ -137,36 +137,49 @@ const ImpactDashboard = () => {
               </CardContent>
             </Card>
 
-            {/* Progress Meters */}
+            {/* Collection Summary */}
             <Card className="shadow-elevated animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <CardHeader>
-                <CardTitle className="text-xl text-foreground">Collection Progress</CardTitle>
+                <CardTitle className="text-xl text-foreground">Collection Summary</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-foreground">Helmets</span>
-                      <span className="text-sm text-muted-foreground">{Math.round((counters.helmets / 1500) * 100)}%</span>
+                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                        <HardHat className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Safety Helmets</p>
+                        <p className="text-sm text-muted-foreground">Collected to date</p>
+                      </div>
                     </div>
-                    <div className="w-full bg-secondary rounded-full h-3">
-                      <div 
-                        className="bg-gradient-corporate h-3 rounded-full transition-all duration-500"
-                        style={{ width: `${Math.min((counters.helmets / 1500) * 100, 100)}%` }}
-                      ></div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-blue-600">{counters.helmets.toLocaleString()}</div>
+                      <div className="text-xs text-muted-foreground">units</div>
                     </div>
                   </div>
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-foreground">Coveralls</span>
-                      <span className="text-sm text-muted-foreground">{Math.round((counters.coveralls / 1000) * 100)}%</span>
+                  
+                  <div className="flex items-center justify-between p-4 bg-emerald-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
+                        <Shirt className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Coveralls</p>
+                        <p className="text-sm text-muted-foreground">Collected to date</p>
+                      </div>
                     </div>
-                    <div className="w-full bg-secondary rounded-full h-3">
-                      <div 
-                        className="bg-gradient-sustainability h-3 rounded-full transition-all duration-500"
-                        style={{ width: `${Math.min((counters.coveralls / 1000) * 100, 100)}%` }}
-                      ></div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-emerald-600">{counters.coveralls.toLocaleString()}</div>
+                      <div className="text-xs text-muted-foreground">units</div>
                     </div>
+                  </div>
+
+                  <div className="pt-4 border-t">
+                    <p className="text-sm text-muted-foreground text-center">
+                      Environmental impact calculated from actual collection data
+                    </p>
                   </div>
                 </div>
               </CardContent>
