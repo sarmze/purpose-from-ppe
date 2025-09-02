@@ -35,9 +35,9 @@ const SustainabilityFacts = () => {
     {
       icon: TrendingDown,
       stat: "95%",
-      description: "Reduction in landfill waste through our PPE recycling initiative",
+      description: "Target reduction in landfill waste through our PPE recycling initiative",
       color: "bg-green-500",
-      category: "KOC Impact"
+      category: "KOC Goal"
     },
     {
       icon: Leaf,
@@ -49,9 +49,9 @@ const SustainabilityFacts = () => {
     {
       icon: Heart,
       stat: "1000+",
-      description: "Families benefited from donated de-identified coveralls annually",
+      description: "Families we aim to benefit through donated de-identified coveralls annually",
       color: "bg-purple-500",
-      category: "Community Impact"
+      category: "Community Goal"
     }
   ];
 
@@ -110,8 +110,8 @@ const SustainabilityFacts = () => {
               <h3 className="text-2xl font-bold text-foreground">KOC's Commitment to Sustainability</h3>
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Through our comprehensive PPE recycling program, we're not just managing waste – 
-              we're creating a circular economy that benefits our environment, communities, and future generations.
+              Through our comprehensive PPE recycling program, we aim to create a circular economy 
+              that will benefit our environment, communities, and future generations.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
