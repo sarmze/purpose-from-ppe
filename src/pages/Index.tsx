@@ -21,18 +21,17 @@ const Index = () => {
       <Header />
       <HeroSection />
       <CountdownSection />
-      <SustainabilityFacts />
       <AboutSection />
+      <SustainabilityFacts />
       <HowItWorksSection />
       <ProcessFlow />
       <CollectionMap />
       <DonationForm />
-      <StoriesBoard />
+      <PartnersSection />
       <ImpactDashboard />
+      <StoriesBoard />
       <CampaignVideos />
       <IncentivesSection />
-      <PartnersSection />
-      {/* <GrandEventSection /> */}
       <Footer />
     </div>
   );
