@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CountdownSection from "@/components/CountdownSection";
 import AboutSection from "@/components/AboutSection";
+import SustainabilityFacts from "@/components/SustainabilityFacts";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ProcessFlow from "@/components/ProcessFlow";
 import CollectionMap from "@/components/CollectionMap";
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <CountdownSection />
+      <SustainabilityFacts />
       <AboutSection />
       <HowItWorksSection />
       <ProcessFlow />
