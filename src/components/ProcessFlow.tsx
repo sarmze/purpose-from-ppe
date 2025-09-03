@@ -17,6 +17,7 @@ import {
   ChevronUp
 } from "lucide-react";
 import recycledPotImage from "/lovable-uploads/0eb2a6b2-94de-4a5c-84f3-eb9f46e43b43.png";
+import coverallsCharityImage from "@/assets/coveralls-charity-donation.jpg";
 
 const ProcessFlow = () => {
   const [selectedProcess, setSelectedProcess] = useState<'helmets' | 'coveralls' | null>(null);
@@ -322,6 +323,51 @@ const ProcessFlow = () => {
                     />
                     <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
                       Recycled PPE
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Showcase Example - Only show when coveralls is selected */}
+          {selectedProcess === 'coveralls' && (
+            <div className="bg-card rounded-2xl p-8 shadow-xl border animate-in slide-in-from-bottom-5 duration-300">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <Badge className="mb-4">Our Mission</Badge>
+                  <h3 className="text-2xl font-bold mb-4">
+                    From Work Coveralls to Community Support
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Through our charitable initiative, we aim to give expired coveralls a second life 
+                    by de-identifying them and donating them to charitable organizations. This creates 
+                    meaningful community impact while reducing textile waste and supporting those in need.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-sm">Complete de-identification process</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-sm">Professional cleaning and preparation</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-sm">Donated to community charities</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                    <img 
+                      src={coverallsCharityImage} 
+                      alt="Vision: De-identified coveralls ready for charitable donation"
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Community Impact
                     </div>
                   </div>
                 </div>
