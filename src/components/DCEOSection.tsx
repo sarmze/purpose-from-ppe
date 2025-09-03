@@ -21,7 +21,7 @@ const DCEOSection = () => {
               <div className="grid md:grid-cols-2 gap-0">
                 {/* DCEO Photo and Info */}
                 <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center">
-                  <div className="text-center mb-6">
+                  <div className="text-center">
                     <img 
                       src="/lovable-uploads/961b8a46-5d76-4ab4-b5b2-9b2f63ffc9d4.png" 
                       alt="Ameena Rajab Saleh - Deputy CEO" 
@@ -30,10 +30,6 @@ const DCEOSection = () => {
                     <h3 className="text-2xl font-bold mb-2">Ameena Rajab Saleh</h3>
                     <p className="text-white/90 text-lg">Deputy CEO (Gas & Environment)</p>
                   </div>
-                  
-                  <blockquote className="text-white/95 italic text-center leading-relaxed text-sm">
-                    "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
-                  </blockquote>
                 </div>
 
                 {/* DCEO Message */}
