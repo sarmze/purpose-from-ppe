@@ -24,6 +24,14 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="animate-fade-in">
+          {/* KOC Logo */}
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png" 
+              alt="Kuwait Oil Company Logo" 
+              className="h-20 md:h-24 w-auto mx-auto"
+            />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             KOC PPE Recycling
             <span className="block text-sustainability-light">Initiative</span>
