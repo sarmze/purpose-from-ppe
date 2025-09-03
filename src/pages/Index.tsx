@@ -30,6 +30,7 @@ const Index = () => {
           <CountdownSection />
           <AboutSection />
           <CampaignVideos />
+          <IncentivesSection />
           <SustainabilityFacts />
           <ESGSection />
         </TabsContent>
@@ -38,7 +39,6 @@ const Index = () => {
           <div className="pt-20">
             <ProcessFlow />
             <HowItWorksSection />
-            <IncentivesSection />
             <CollectionMap />
             <DonationForm />
           </div>
