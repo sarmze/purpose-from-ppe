@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CountdownSection from "@/components/CountdownSection";
@@ -13,27 +15,49 @@ import CampaignVideos from "@/components/CampaignVideos";
 import IncentivesSection from "@/components/IncentivesSection";
 import ImpactDashboard from "@/components/ImpactDashboard";
 import PartnersSection from "@/components/PartnersSection";
-{/* import GrandEventSection from "@/components/GrandEventSection"; */}
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState("overview");
+
   return (
     <div className="min-h-screen">
-      <Header />
-      <HeroSection />
-      <CountdownSection />
-      <AboutSection />
-      <CampaignVideos />
-      <ESGSection />
-      <SustainabilityFacts />
-      <HowItWorksSection />
-      <ProcessFlow />
-      <CollectionMap />
-      <DonationForm />
-      <PartnersSection />
-      <ImpactDashboard />
-      <StoriesBoard />
-      <IncentivesSection />
+      <Header activeTab={activeTab} onTabChange={setActiveTab} />
+      
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <TabsContent value="overview" className="mt-0">
+          <HeroSection />
+          <CountdownSection />
+          <AboutSection />
+          <CampaignVideos />
+          <ESGSection />
+          <SustainabilityFacts />
+        </TabsContent>
+
+        <TabsContent value="how-it-works" className="mt-0">
+          <div className="pt-20">
+            <HowItWorksSection />
+            <ProcessFlow />
+            <IncentivesSection />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="collection" className="mt-0">
+          <div className="pt-20">
+            <CollectionMap />
+            <DonationForm />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="impact" className="mt-0">
+          <div className="pt-20">
+            <ImpactDashboard />
+            <StoriesBoard />
+            <PartnersSection />
+          </div>
+        </TabsContent>
+      </Tabs>
+      
       <Footer />
     </div>
   );
