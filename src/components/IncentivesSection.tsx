@@ -10,16 +10,6 @@ const IncentivesSection = ({ onTabChange }: IncentivesSectionProps) => {
   const handleContributeClick = () => {
     if (onTabChange) {
       onTabChange("donate-now");
-      // Scroll to donation form after tab change
-      setTimeout(() => {
-        const donationForm = document.getElementById('donation-form');
-        if (donationForm) {
-          donationForm.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
     }
   };
   const incentives = [

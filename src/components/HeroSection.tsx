@@ -9,16 +9,6 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
   const handleDonateClick = () => {
     if (onTabChange) {
       onTabChange("donate-now");
-      // Scroll to donation form after tab change
-      setTimeout(() => {
-        const donationForm = document.getElementById('donation-form');
-        if (donationForm) {
-          donationForm.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
     }
   };
   return (
