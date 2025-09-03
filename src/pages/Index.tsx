@@ -30,8 +30,8 @@ const Index = () => {
           <CountdownSection />
           <AboutSection />
           <CampaignVideos />
-          <ESGSection />
           <SustainabilityFacts />
+          <ESGSection />
         </TabsContent>
 
         <TabsContent value="how-it-works" className="mt-0">
