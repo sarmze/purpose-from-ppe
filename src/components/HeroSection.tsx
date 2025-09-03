@@ -29,7 +29,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png" 
               alt="Kuwait Oil Company Logo" 
-              className="h-20 md:h-24 w-auto mx-auto"
+              className="h-32 md:h-40 w-auto mx-auto"
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
