@@ -2,7 +2,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileCheck, Users, Trophy } from "lucide-react";
 
-const IncentivesSection = () => {
+interface IncentivesSectionProps {
+  onTabChange?: (tab: string) => void;
+}
+
+const IncentivesSection = ({ onTabChange }: IncentivesSectionProps) => {
+  const handleContributeClick = () => {
+    if (onTabChange) {
+      onTabChange("donate-now");
+      // Scroll to donation form after tab change
+      setTimeout(() => {
+        const donationForm = document.getElementById('donation-form');
+        if (donationForm) {
+          donationForm.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  };
   const incentives = [
     {
       title: "CEO Recognition",
@@ -98,12 +117,12 @@ const IncentivesSection = () => {
                 Your contribution matters and will be celebrated.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="#donation" 
-                  className="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-smooth"
+                <button 
+                  onClick={handleContributeClick}
+                  className="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-smooth cursor-pointer"
                 >
                   Start Contributing Now
-                </a>
+                </button>
                 <span className="text-white/80 self-center">Limited time campaign - Act now!</span>
               </div>
             </div>

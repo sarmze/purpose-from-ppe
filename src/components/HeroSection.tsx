@@ -1,14 +1,24 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
 
-const HeroSection = () => {
-  const scrollToHowItWorks = () => {
-    const howItWorksSection = document.getElementById('how-it-works');
-    if (howItWorksSection) {
-      howItWorksSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+interface HeroSectionProps {
+  onTabChange?: (tab: string) => void;
+}
+
+const HeroSection = ({ onTabChange }: HeroSectionProps) => {
+  const handleDonateClick = () => {
+    if (onTabChange) {
+      onTabChange("donate-now");
+      // Scroll to donation form after tab change
+      setTimeout(() => {
+        const donationForm = document.getElementById('donation-form');
+        if (donationForm) {
+          donationForm.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
     }
   };
   return (
@@ -46,7 +56,7 @@ const HeroSection = () => {
             variant="hero" 
             size="lg" 
             className="animate-float text-xl px-12 py-6 h-auto cursor-pointer"
-            onClick={scrollToHowItWorks}
+            onClick={handleDonateClick}
           >
             Donate Now
           </Button>

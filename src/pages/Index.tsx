@@ -26,12 +26,12 @@ const Index = () => {
       
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsContent value="overview" className="mt-0">
-          <HeroSection />
+          <HeroSection onTabChange={setActiveTab} />
           <CountdownSection />
           <AboutSection />
           <SustainabilityFacts />
           <CampaignVideos />
-          <IncentivesSection />
+          <IncentivesSection onTabChange={setActiveTab} />
           <ESGSection />
         </TabsContent>
 
@@ -40,7 +40,9 @@ const Index = () => {
             <ProcessFlow />
             <HowItWorksSection />
             <CollectionMap />
-            <DonationForm />
+            <div id="donation-form">
+              <DonationForm />
+            </div>
           </div>
         </TabsContent>
 
