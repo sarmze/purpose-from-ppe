@@ -197,19 +197,19 @@ const CollectionMap = () => {
             </div>
             
             <div className="text-center p-6 bg-background rounded-xl shadow-sm">
-              <div className="w-12 h-12 bg-gradient-sustainability rounded-full flex items-center justify-center mx-auto mb-4">
-                <Package className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="font-bold mb-2 text-foreground">Drop Off PPE</h3>
-              <p className="text-sm text-muted-foreground">Bring your used helmets and coveralls to the selected location</p>
-            </div>
-            
-            <div className="text-center p-6 bg-background rounded-xl shadow-sm">
               <div className="w-12 h-12 bg-gradient-to-br from-primary to-sustainability rounded-full flex items-center justify-center mx-auto mb-4">
                 <ExternalLink className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold mb-2 text-foreground">Get Directions</h3>
               <p className="text-sm text-muted-foreground">Click "Open in Maps" for turn-by-turn directions</p>
+            </div>
+            
+            <div className="text-center p-6 bg-background rounded-xl shadow-sm">
+              <div className="w-12 h-12 bg-gradient-sustainability rounded-full flex items-center justify-center mx-auto mb-4">
+                <Package className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold mb-2 text-foreground">Drop Off PPE</h3>
+              <p className="text-sm text-muted-foreground">Bring your used helmets and coveralls to the selected location</p>
             </div>
           </div>
         </div>
