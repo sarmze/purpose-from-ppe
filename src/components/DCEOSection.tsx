@@ -66,6 +66,38 @@ const DCEOSection = () => {
             </CardContent>
           </Card>
 
+          {/* HSE Manager Card */}
+          <Card className="shadow-corporate hover:shadow-elevated transition-smooth animate-fade-in overflow-hidden mt-8">
+            <CardContent className="p-0">
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* HSE Manager Message */}
+                <div className="p-8 bg-white">
+                  <div className="mb-6">
+                    <h4 className="text-2xl font-bold text-primary mb-4">HSE Leadership</h4>
+                    <div className="bg-sustainability/5 p-4 rounded-lg">
+                      <p className="text-foreground leading-relaxed">
+                        <strong>Naser Bader Al-Buhairi</strong> was given this task to guide this initiative and ensuring smooth coordination and navigation across all HSE Teams and company directorates. His expertise in Health, Safety & Environment management ensures that every aspect of the PPE Recycling Initiative meets the highest standards of safety and environmental compliance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* HSE Manager Photo and Info */}
+                <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center">
+                  <div className="text-center">
+                    <img 
+                      src="/lovable-uploads/f069926c-5502-4bc8-bd48-9a837ca5166b.png" 
+                      alt="Naser Bader Al-Buhairi - Manager HSE" 
+                      className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover"
+                    />
+                    <h3 className="text-2xl font-bold mb-2">Naser Bader Al-Buhairi</h3>
+                    <p className="text-white/90 text-lg">Manager Health, Safety & Environment</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
         </div>
       </div>
     </section>
