@@ -176,7 +176,7 @@ const DonationForm = () => {
                     }
                   />
                   <Label htmlFor="hasDonated" className="text-accent-foreground font-medium">
-                    I have donated PPE to the collection bins
+                    I have submitted my PPE to the collection bins
                   </Label>
                 </div>
 
