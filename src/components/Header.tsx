@@ -12,15 +12,23 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change color when scrolled past hero section (approximately 100vh)
-      const scrollPosition = window.scrollY;
-      const heroHeight = window.innerHeight;
-      setIsScrolled(scrollPosition > heroHeight * 0.8);
+      // Only apply scroll-based color changing for overview tab
+      if (activeTab === "overview") {
+        const scrollPosition = window.scrollY;
+        const heroHeight = window.innerHeight;
+        setIsScrolled(scrollPosition > heroHeight * 0.8);
+      } else {
+        // For all other tabs, always use blue text (scrolled state)
+        setIsScrolled(true);
+      }
     };
 
+    // Initial check when tab changes
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeTab]); // Add activeTab to dependency array
 
   const textColorClass = isScrolled ? "text-primary" : "text-primary-foreground";
   const tabTextColorClass = isScrolled ? "text-primary" : "text-primary-foreground";
