@@ -34,16 +34,11 @@ const Index = () => {
           <ESGSection />
         </TabsContent>
 
-        <TabsContent value="how-it-works" className="mt-0">
+        <TabsContent value="donate-now" className="mt-0">
           <div className="pt-20">
             <ProcessFlow />
             <HowItWorksSection />
             <IncentivesSection />
-          </div>
-        </TabsContent>
-
-        <TabsContent value="collection" className="mt-0">
-          <div className="pt-20">
             <CollectionMap />
             <DonationForm />
           </div>
