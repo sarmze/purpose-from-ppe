@@ -293,10 +293,10 @@ const ProcessFlow = () => {
                     From Safety Helmet to Office Plant Pot
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    This yellow plant pot was once a safety helmet protecting a KOC worker. 
-                    Through our recycling process, it has been transformed into a beautiful 
-                    office accessory that brings life to workspaces while telling the story 
-                    of sustainable innovation.
+                    Through our innovative recycling initiative, we aim to transform expired safety helmets 
+                    into beautiful plant pots for office spaces. Each pot will carry the message 
+                    "I USED TO BE A SAFETY HELMET," telling the story of sustainable innovation 
+                    and giving new life to protective equipment.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
