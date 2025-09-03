@@ -85,7 +85,7 @@ const CountdownSection = () => {
                 <div className={`text-3xl md:text-4xl font-bold mb-1 ${
                   isVeryUrgent ? 'text-red-600' : isUrgent ? 'text-yellow-600' : 'text-primary'
                 }`}>
-                  {item.value.toString().padStart(2, '0')}
+                  {(item.value || 0).toString().padStart(2, '0')}
                 </div>
                 <div className="text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-wide">
                   {item.label}
