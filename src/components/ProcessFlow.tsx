@@ -16,7 +16,7 @@ import {
   ChevronDown,
   ChevronUp
 } from "lucide-react";
-import recycledPotImage from "@/assets/recycled-helmet-pot.jpg";
+import recycledPotImage from "@/assets/recycled-helmet-pot-new.jpg";
 
 const ProcessFlow = () => {
   const [selectedProcess, setSelectedProcess] = useState<'helmets' | 'coveralls' | null>(null);
@@ -317,7 +317,7 @@ const ProcessFlow = () => {
                   <div className="relative overflow-hidden rounded-xl shadow-2xl">
                     <img 
                       src={recycledPotImage} 
-                      alt="Recycled safety helmet transformed into office plant pot"
+                      alt="Vision: Safety helmet to be transformed into plant pot"
                       className="w-full h-80 object-cover"
                     />
                     <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
