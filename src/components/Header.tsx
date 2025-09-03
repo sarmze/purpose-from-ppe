@@ -35,15 +35,20 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
   const tabActiveColorClass = isScrolled 
     ? "data-[state=active]:bg-primary data-[state=active]:text-primary-foreground" 
     : "data-[state=active]:bg-primary-foreground data-[state=active]:text-primary";
+  
+  // Logo logic: use blue logo for light backgrounds (scrolled or non-overview tabs)
+  const logoSrc = isScrolled 
+    ? "/lovable-uploads/f069926c-5502-4bc8-bd48-9a837ca5166b.png" 
+    : "/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png";
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img 
-              src="/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png" 
+              src={logoSrc} 
               alt="Kuwait Oil Company Logo" 
-              className="h-14 w-auto"
+              className="h-14 w-auto transition-opacity duration-300"
             />
             <div>
               <h1 className={`text-xl font-bold transition-colors duration-300 ${textColorClass}`}>
