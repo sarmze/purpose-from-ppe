@@ -10,10 +10,10 @@ const CountdownSection = () => {
   const endDateTime = endDate.getTime();
   
   const [timeLeft, setTimeLeft] = useState({
+    months: 0,
     days: 0,
     hours: 0,
-    minutes: 0,
-    seconds: 0
+    minutes: 0
   });
 
   useEffect(() => {
@@ -22,14 +22,14 @@ const CountdownSection = () => {
       const distance = endDateTime - now;
 
       if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000)
-        });
+        const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+        const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        
+        setTimeLeft({ months, days, hours, minutes });
       } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setTimeLeft({ months: 0, days: 0, hours: 0, minutes: 0 });
       }
     }, 1000);
 
@@ -76,10 +76,10 @@ const CountdownSection = () => {
           {/* Countdown Timer */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             {[
+              { label: 'Months', value: timeLeft.months },
               { label: 'Days', value: timeLeft.days },
               { label: 'Hours', value: timeLeft.hours },
-              { label: 'Minutes', value: timeLeft.minutes },
-              { label: 'Seconds', value: timeLeft.seconds }
+              { label: 'Minutes', value: timeLeft.minutes }
             ].map((item, index) => (
               <div key={index} className="bg-background/80 backdrop-blur-sm rounded-2xl p-4 shadow-sm border">
                 <div className={`text-3xl md:text-4xl font-bold mb-1 ${
