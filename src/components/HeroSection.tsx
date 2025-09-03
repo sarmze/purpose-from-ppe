@@ -48,7 +48,7 @@ const HeroSection = () => {
             className="animate-float text-xl px-12 py-6 h-auto cursor-pointer"
             onClick={scrollToHowItWorks}
           >
-            Learn How to Donate
+            Donate Now
           </Button>
         </div>
       </div>
