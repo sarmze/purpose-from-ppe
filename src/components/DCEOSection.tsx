@@ -73,12 +73,16 @@ const DCEOSection = () => {
                 {/* HSE Manager Message */}
                 <div className="p-8 bg-white">
                   <div className="mb-6">
-                    <h4 className="text-2xl font-bold text-primary mb-4">HSE Leadership</h4>
-                    <div className="bg-sustainability/5 p-4 rounded-lg">
-                      <p className="text-foreground leading-relaxed">
-                        <strong>Naser Bader Al-Buhairi</strong> was given this task to guide this initiative and ensuring smooth coordination and navigation across all HSE Teams and company directorates. His expertise in Health, Safety & Environment management ensures that every aspect of the PPE Recycling Initiative meets the highest standards of safety and environmental compliance.
-                      </p>
-                    </div>
+                    <h4 className="text-2xl font-bold text-primary mb-4">HSE Manager Message</h4>
+                    <blockquote className="text-foreground leading-relaxed text-lg italic border-l-4 border-primary pl-6 mb-4">
+                      "As Manager of Health, Safety & Environment, I was entrusted with the responsibility to guide this transformative initiative and ensure seamless coordination across all HSE teams and company directorates. This PPE Recycling Initiative represents more than just waste management—it embodies our commitment to creating a sustainable future while maintaining the highest safety standards. Through collaborative efforts and innovative thinking, we are setting new benchmarks for environmental stewardship in the oil and gas sector. I am proud to lead this initiative that demonstrates how environmental responsibility and operational excellence can work hand in hand."
+                    </blockquote>
+                  </div>
+                  
+                  <div className="bg-sustainability/5 p-4 rounded-lg">
+                    <p className="text-foreground leading-relaxed">
+                      Under his leadership, the initiative ensures smooth coordination and navigation across all HSE Teams and company directorates, maintaining the highest standards of safety and environmental compliance throughout the recycling process.
+                    </p>
                   </div>
                 </div>
 
