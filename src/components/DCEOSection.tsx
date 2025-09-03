@@ -15,6 +15,20 @@ const DCEOSection = () => {
             </p>
           </div>
 
+          {/* Initiative Origin */}
+          <div className="text-center mb-16 animate-slide-up">
+            <div className="bg-white p-8 rounded-xl shadow-soft border border-primary/10">
+              <h3 className="text-2xl font-bold text-primary mb-4">
+                From Vision to Action
+              </h3>
+              <p className="text-lg text-foreground leading-relaxed max-w-4xl mx-auto">
+                The KOC PPE Recycling Initiative was born from Deputy CEO Ameena Rajab Saleh's commitment to environmental sustainability 
+                and her vision of transforming everyday operations into meaningful environmental impact. Her leadership in the Gas & Environment 
+                sector drives innovation that benefits both our company and the planet.
+              </p>
+            </div>
+          </div>
+
           {/* DCEO Card */}
           <Card className="shadow-corporate hover:shadow-elevated transition-smooth animate-fade-in overflow-hidden">
             <CardContent className="p-0">
@@ -52,19 +66,6 @@ const DCEOSection = () => {
             </CardContent>
           </Card>
 
-          {/* Initiative Origin */}
-          <div className="text-center mt-12 animate-slide-up">
-            <div className="bg-white p-8 rounded-xl shadow-soft border border-primary/10">
-              <h3 className="text-2xl font-bold text-primary mb-4">
-                From Vision to Action
-              </h3>
-              <p className="text-lg text-foreground leading-relaxed max-w-4xl mx-auto">
-                The KOC PPE Recycling Initiative was born from Deputy CEO Ameena Rajab Saleh's commitment to environmental sustainability 
-                and her vision of transforming everyday operations into meaningful environmental impact. Her leadership in the Gas & Environment 
-                sector drives innovation that benefits both our company and the planet.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
