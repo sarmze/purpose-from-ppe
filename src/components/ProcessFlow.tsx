@@ -288,7 +288,7 @@ const ProcessFlow = () => {
             <div className="bg-card rounded-2xl p-8 shadow-xl border animate-in slide-in-from-bottom-5 duration-300">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div>
-                  <Badge className="mb-4">Success Story</Badge>
+                  <Badge className="mb-4">Our Vision</Badge>
                   <h3 className="text-2xl font-bold mb-4">
                     From Safety Helmet to Office Plant Pot
                   </h3>

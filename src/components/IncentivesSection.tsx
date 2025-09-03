@@ -103,7 +103,7 @@ const IncentivesSection = ({ onTabChange }: IncentivesSectionProps) => {
                 Ready to Be Recognized?
               </h3>
               <p className="text-xl text-white/90 mb-6 max-w-3xl mx-auto">
-                Join the KOC PPE Recycling Initiative today and become part of our sustainability success story. 
+                Join the KOC PPE Recycling Initiative today and become part of our sustainability mission. 
                 Your contribution matters and will be celebrated.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
