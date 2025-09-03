@@ -17,7 +17,7 @@ import {
   ChevronUp
 } from "lucide-react";
 import recycledPotImage from "/lovable-uploads/0eb2a6b2-94de-4a5c-84f3-eb9f46e43b43.png";
-import coverallsCharityImage from "@/assets/coveralls-charity-donation.jpg";
+import coverallsCharityImage from "@/assets/blue-coveralls-charity.jpg";
 
 const ProcessFlow = () => {
   const [selectedProcess, setSelectedProcess] = useState<'helmets' | 'coveralls' | null>(null);
