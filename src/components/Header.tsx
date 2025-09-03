@@ -41,7 +41,7 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img 
-              src="/lovable-uploads/6b2c0c92-62b0-41d2-9ae3-d3f4a6f2be5a.png" 
+              src="/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png" 
               alt="Kuwait Oil Company Logo" 
               className="h-14 w-auto"
             />
