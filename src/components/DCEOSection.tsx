@@ -40,11 +40,9 @@ const DCEOSection = () => {
                 <div className="p-8 bg-white">
                   <div className="mb-6">
                     <h4 className="text-2xl font-bold text-primary mb-4">DCEO Message</h4>
-                    <img 
-                      src="/lovable-uploads/04f340bb-b0fb-4eb1-b4f7-f2ff24a46d3c.png" 
-                      alt="DCEO Engage to Success Message" 
-                      className="w-full rounded-lg shadow-sm"
-                    />
+                    <blockquote className="text-foreground leading-relaxed text-lg italic border-l-4 border-primary pl-6">
+                      "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
+                    </blockquote>
                   </div>
                   
                   <div className="bg-sustainability/5 p-4 rounded-lg">
