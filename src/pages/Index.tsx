@@ -29,9 +29,9 @@ const Index = () => {
           <HeroSection />
           <CountdownSection />
           <AboutSection />
+          <SustainabilityFacts />
           <CampaignVideos />
           <IncentivesSection />
-          <SustainabilityFacts />
           <ESGSection />
         </TabsContent>
 
