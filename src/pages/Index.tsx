@@ -23,6 +23,7 @@ const Index = () => {
       <HeroSection />
       <CountdownSection />
       <AboutSection />
+      <CampaignVideos />
       <ESGSection />
       <SustainabilityFacts />
       <HowItWorksSection />
@@ -32,7 +33,6 @@ const Index = () => {
       <PartnersSection />
       <ImpactDashboard />
       <StoriesBoard />
-      <CampaignVideos />
       <IncentivesSection />
       <Footer />
     </div>
