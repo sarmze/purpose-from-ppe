@@ -16,7 +16,7 @@ import {
   ChevronDown,
   ChevronUp
 } from "lucide-react";
-import recycledPotImage from "@/assets/helmet-pot-tilted-final.jpg";
+import recycledPotImage from "@/assets/helmet-pot-realistic.jpg";
 
 const ProcessFlow = () => {
   const [selectedProcess, setSelectedProcess] = useState<'helmets' | 'coveralls' | null>(null);
