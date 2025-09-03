@@ -36,8 +36,8 @@ const Index = () => {
 
         <TabsContent value="how-it-works" className="mt-0">
           <div className="pt-20">
-            <HowItWorksSection />
             <ProcessFlow />
+            <HowItWorksSection />
             <IncentivesSection />
           </div>
         </TabsContent>
