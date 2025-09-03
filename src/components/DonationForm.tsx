@@ -123,7 +123,7 @@ const DonationForm = () => {
           {/* Header */}
           <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Submit Your Donation Story
+              Submit Your Story
             </h2>
             <p className="text-xl text-muted-foreground">
               Share your experience and be part of our sustainability story board
@@ -133,7 +133,7 @@ const DonationForm = () => {
           {/* Form */}
           <Card className="shadow-elevated animate-fade-in">
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Donation Information</CardTitle>
+              <CardTitle className="text-2xl text-foreground">PPE Submission Information</CardTitle>
               <CardDescription>
                 Help us track our collective impact and share inspiring stories
               </CardDescription>
