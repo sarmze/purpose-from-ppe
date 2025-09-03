@@ -73,7 +73,7 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
                   value="donate-now" 
                   className={`transition-colors duration-300 ${tabTextColorClass} ${tabActiveColorClass}`}
                 >
-                  Donate Now
+                  Participate Now
                 </TabsTrigger>
                 <TabsTrigger 
                   value="impact" 

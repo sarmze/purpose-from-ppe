@@ -48,7 +48,7 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
             className="animate-float text-xl px-12 py-6 h-auto cursor-pointer"
             onClick={handleDonateClick}
           >
-            Donate Now
+            Participate Now
           </Button>
         </div>
       </div>
