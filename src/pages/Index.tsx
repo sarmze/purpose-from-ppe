@@ -3,6 +3,7 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CountdownSection from "@/components/CountdownSection";
+import DCEOSection from "@/components/DCEOSection";
 import AboutSection from "@/components/AboutSection";
 import ESGSection from "@/components/ESGSection";
 import SustainabilityFacts from "@/components/SustainabilityFacts";
@@ -28,6 +29,7 @@ const Index = () => {
         <TabsContent value="overview" className="mt-0">
           <HeroSection onTabChange={setActiveTab} />
           <CountdownSection />
+          <DCEOSection />
           <AboutSection />
           <SustainabilityFacts />
           <CampaignVideos />
