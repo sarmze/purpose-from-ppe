@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-bg-new.jpg";
+import heroImage from "@/assets/ppe-recycling-hero.jpg";
 
 interface HeroSectionProps {
   onTabChange?: (tab: string) => void;
