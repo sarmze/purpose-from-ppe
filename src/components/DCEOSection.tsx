@@ -86,7 +86,7 @@ const DCEOSection = () => {
                 <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center">
                   <div className="text-center">
                     <img 
-                      src="/lovable-uploads/f069926c-5502-4bc8-bd48-9a837ca5166b.png" 
+                      src="/lovable-uploads/cd623154-d4db-4f0a-a1ee-740f7f614a4f.png" 
                       alt="Naser Bader Al-Buhairi - Manager HSE" 
                       className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover"
                     />
