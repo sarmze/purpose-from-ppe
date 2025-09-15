@@ -70,11 +70,24 @@ const DCEOSection = () => {
           <Card className="shadow-corporate hover:shadow-elevated transition-smooth animate-fade-in overflow-hidden mt-8">
             <CardContent className="p-0">
               <div className="grid md:grid-cols-2 gap-0">
-                {/* HSE Manager Message */}
-                <div className="p-8 bg-white">
+                {/* HSE Manager Photo and Info - First on mobile, second on desktop */}
+                <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center order-1 md:order-2">
+                  <div className="text-center">
+                    <img 
+                      src="/lovable-uploads/cd623154-d4db-4f0a-a1ee-740f7f614a4f.png" 
+                      alt="Naser Bader Al-Buhairi - Manager HSE" 
+                      className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover"
+                    />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">Naser Bader Al-Buhairi</h3>
+                    <p className="text-white/90 text-sm sm:text-base md:text-lg">Manager Health, Safety & Environment</p>
+                  </div>
+                </div>
+
+                {/* HSE Manager Message - Second on mobile, first on desktop */}
+                <div className="p-8 bg-white order-2 md:order-1">
                   <div className="mb-6">
-                    <h4 className="text-2xl font-bold text-primary mb-4">HSE Manager Message</h4>
-                    <blockquote className="text-foreground leading-relaxed text-lg italic border-l-4 border-primary pl-6 mb-4">
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">HSE Manager Message</h4>
+                    <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6 mb-4">
                       "As Manager of Health, Safety & Environment, I was entrusted with the responsibility to guide this transformative initiative and ensure seamless coordination across all HSE teams and company directorates. This PPE Recycling Initiative represents more than just waste management—it embodies our commitment to creating a sustainable future while maintaining the highest safety standards. Through collaborative efforts and innovative thinking, we are setting new benchmarks for environmental stewardship in the oil and gas sector. I am proud to lead this initiative that demonstrates how environmental responsibility and operational excellence can work hand in hand."
                     </blockquote>
                   </div>
@@ -83,19 +96,6 @@ const DCEOSection = () => {
                     <p className="text-foreground leading-relaxed">
                       Under his leadership, the initiative ensures smooth coordination and navigation across all HSE Teams and company directorates, maintaining the highest standards of safety and environmental compliance throughout the recycling process.
                     </p>
-                  </div>
-                </div>
-
-                {/* HSE Manager Photo and Info */}
-                <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center">
-                  <div className="text-center">
-                    <img 
-                      src="/lovable-uploads/cd623154-d4db-4f0a-a1ee-740f7f614a4f.png" 
-                      alt="Naser Bader Al-Buhairi - Manager HSE" 
-                      className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover"
-                    />
-                    <h3 className="text-2xl font-bold mb-2">Naser Bader Al-Buhairi</h3>
-                    <p className="text-white/90 text-lg">Manager Health, Safety & Environment</p>
                   </div>
                 </div>
               </div>
