@@ -76,7 +76,7 @@ const DCEOSection = () => {
                     </div>
                   </div>
                   
-                  <div className={`bg-sustainability/5 p-4 rounded-lg ${isDCEOMessageExpanded ? 'block' : 'hidden'} md:block`}>
+                  <div className={`bg-sustainability/5 p-4 rounded-lg ${isDCEOMessageExpanded ? 'block' : 'hidden'} md:block hidden sm:block`}>
                     <p className="text-foreground leading-relaxed">
                       Through the <strong>Engage to Success (E2S) system</strong>, our integral staff and young talents can express their suggestions, initiatives, and concerns at all levels 
                       <span className="text-primary font-semibold"> freely and directly with the DCEO</span>. This PPE Recycling Initiative exemplifies how employee-driven sustainability ideas become reality.
