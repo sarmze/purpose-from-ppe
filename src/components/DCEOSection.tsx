@@ -74,9 +74,9 @@ const DCEOSection = () => {
                         "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
                       </blockquote>
                       
-                      {/* E2S system info - visible on mobile inside collapsible, always visible on desktop */}
-                      <div className="bg-sustainability/5 p-4 rounded-lg sm:hidden">
-                        <p className="text-foreground leading-relaxed">
+                      {/* E2S system info - visible on mobile inside collapsible */}
+                      <div className="bg-sustainability/10 p-4 rounded-lg border border-sustainability/20 sm:hidden mt-4">
+                        <p className="text-foreground leading-relaxed text-sm">
                           Through the <strong>Engage to Success (E2S) system</strong>, our integral staff and young talents can express their suggestions, initiatives, and concerns at all levels 
                           <span className="text-primary font-semibold"> freely and directly with the DCEO</span>. This PPE Recycling Initiative exemplifies how employee-driven sustainability ideas become reality.
                         </p>
@@ -138,8 +138,8 @@ const DCEOSection = () => {
                       </blockquote>
                       
                       {/* HSE coordination info - visible on mobile inside collapsible */}
-                      <div className="bg-sustainability/5 p-4 rounded-lg sm:hidden">
-                        <p className="text-foreground leading-relaxed">
+                      <div className="bg-sustainability/10 p-4 rounded-lg border border-sustainability/20 sm:hidden mt-4">
+                        <p className="text-foreground leading-relaxed text-sm">
                           Under his leadership, the initiative ensures smooth coordination and navigation across all HSE Teams and company directorates, maintaining the highest standards of safety and environmental compliance throughout the recycling process.
                         </p>
                       </div>
