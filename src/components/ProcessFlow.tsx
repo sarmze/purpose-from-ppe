@@ -199,9 +199,9 @@ const ProcessFlow = () => {
           </p>
         </div>
 
-        {/* Clickable PPE Cards */}
+          {/* Clickable PPE Cards */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8 px-4">
             {/* Safety Helmets Card */}
             <Card 
               className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-lg border-2 ${

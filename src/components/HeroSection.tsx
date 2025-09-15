@@ -25,21 +25,21 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="animate-fade-in">
           {/* KOC Logo */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <img 
               src="/lovable-uploads/7104d558-8d12-4a6a-a1f6-20e7316d2530.png" 
               alt="Kuwait Oil Company Logo" 
-              className="h-48 md:h-60 w-auto mx-auto"
+              className="h-32 sm:h-48 md:h-60 w-auto mx-auto"
             />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             KOC PPE Recycling
             <span className="block text-sustainability-light">Initiative</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
             From Protection to Purpose – Giving PPE a Second Life
           </p>
-          <p className="text-lg mb-12 max-w-2xl mx-auto opacity-90">
+          <p className="text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto opacity-90 px-4">
             Join our sustainability mission to transform expired safety equipment into meaningful environmental impact
           </p>
           <Button 
