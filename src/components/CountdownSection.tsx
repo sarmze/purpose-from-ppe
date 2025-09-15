@@ -64,10 +64,10 @@ const CountdownSection = () => {
               }`} />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+              <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-foreground">
                 Collection Period Ending Soon
               </h2>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Don't miss your chance to participate in the PPE Recycling Initiative
               </p>
             </div>
@@ -82,7 +82,7 @@ const CountdownSection = () => {
               { label: 'Minutes', value: timeLeft.minutes }
             ].map((item, index) => (
               <div key={index} className="bg-background/80 backdrop-blur-sm rounded-2xl p-4 shadow-sm border">
-                <div className={`text-3xl md:text-4xl font-bold mb-1 ${
+                <div className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-1 ${
                   isVeryUrgent ? 'text-red-600' : isUrgent ? 'text-yellow-600' : 'text-primary'
                 }`}>
                   {(item.value || 0).toString().padStart(2, '0')}

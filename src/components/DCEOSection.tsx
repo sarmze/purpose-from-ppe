@@ -7,10 +7,10 @@ const DCEOSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
               Leadership Initiative
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               This initiative was founded upon the vision and request of our Deputy CEO for Gas & Environment
             </p>
           </div>
@@ -18,10 +18,10 @@ const DCEOSection = () => {
           {/* Initiative Origin */}
           <div className="text-center mb-16 animate-slide-up">
             <div className="bg-white p-8 rounded-xl shadow-soft border border-primary/10">
-              <h3 className="text-2xl font-bold text-primary mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">
                 From Vision to Action
               </h3>
-              <p className="text-lg text-foreground leading-relaxed max-w-4xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed max-w-4xl mx-auto">
                 The KOC PPE Recycling Initiative was born from Deputy CEO Ameena Rajab Saleh's commitment to environmental sustainability 
                 and her vision of transforming everyday operations into meaningful environmental impact. Her leadership in the Gas & Environment 
                 sector drives innovation that benefits our company.
@@ -41,16 +41,16 @@ const DCEOSection = () => {
                       alt="Ameena Rajab Saleh - Deputy CEO" 
                       className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover"
                     />
-                    <h3 className="text-2xl font-bold mb-2">Ameena Rajab Saleh</h3>
-                    <p className="text-white/90 text-lg">Deputy CEO (Gas & Environment)</p>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">Ameena Rajab Saleh</h3>
+                    <p className="text-white/90 text-sm sm:text-base md:text-lg">Deputy CEO (Gas & Environment)</p>
                   </div>
                 </div>
 
                 {/* DCEO Message */}
                 <div className="p-8 bg-white">
                   <div className="mb-6">
-                    <h4 className="text-2xl font-bold text-primary mb-4">DCEO Message</h4>
-                    <blockquote className="text-foreground leading-relaxed text-lg italic border-l-4 border-primary pl-6">
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">DCEO Message</h4>
+                    <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6">
                       "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
                     </blockquote>
                   </div>

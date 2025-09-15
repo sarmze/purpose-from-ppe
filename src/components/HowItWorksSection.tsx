@@ -40,10 +40,10 @@ const HowItWorksSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
               How It Works
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Follow these simple steps to participate in the KOC PPE Recycling Initiative
             </p>
           </div>
@@ -51,10 +51,10 @@ const HowItWorksSection = () => {
           {/* CTA */}
           <div className="text-center mb-16 animate-slide-up">
             <div className="p-8 bg-accent rounded-2xl shadow-corporate">
-              <h3 className="text-2xl font-bold mb-4 text-accent-foreground">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-accent-foreground">
                 Ready to Make an Impact?
               </h3>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6">
                 Start your PPE recycling journey today and be part of KOC's sustainability mission
               </p>
             </div>
@@ -80,10 +80,10 @@ const HowItWorksSection = () => {
 
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-foreground">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
