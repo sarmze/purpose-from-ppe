@@ -190,11 +190,11 @@ const ProcessFlow = () => {
           <Badge variant="outline" className="mb-4 text-sm font-medium">
             Transformation Process
           </Badge>
-          <h2 className="text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
             From Safety Gear to
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"> Sustainable Solutions</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
             Click on each PPE type to discover their unique transformation journeys.
           </p>
         </div>
@@ -218,8 +218,8 @@ const ProcessFlow = () => {
                       <HardHat className="w-8 h-8 text-white" />
                     </div>
                     <div className="text-left">
-                      <h3 className="text-xl font-bold mb-1">Safety Helmets</h3>
-                      <p className="text-muted-foreground text-sm">
+                      <h3 className="text-lg sm:text-xl font-bold mb-1">Safety Helmets</h3>
+                      <p className="text-muted-foreground text-xs sm:text-sm">
                         Recycled into office items like plant pots
                       </p>
                     </div>
@@ -249,8 +249,8 @@ const ProcessFlow = () => {
                       <Shirt className="w-8 h-8 text-white" />
                     </div>
                     <div className="text-left">
-                      <h3 className="text-xl font-bold mb-1">Coveralls</h3>
-                      <p className="text-muted-foreground text-sm">
+                      <h3 className="text-lg sm:text-xl font-bold mb-1">Coveralls</h3>
+                      <p className="text-muted-foreground text-xs sm:text-sm">
                         De-identified and donated to charities
                       </p>
                     </div>
