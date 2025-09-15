@@ -75,7 +75,7 @@ const DCEOSection = () => {
                       </blockquote>
                       
                       {/* E2S system info - visible on mobile inside collapsible */}
-                      <div className="bg-sustainability/10 p-4 rounded-lg border border-sustainability/20 sm:hidden mt-4">
+                      <div className="bg-red-100 border border-red-300 p-4 rounded-lg block sm:hidden mt-4">
                         <p className="text-foreground leading-relaxed text-sm">
                           Through the <strong>Engage to Success (E2S) system</strong>, our integral staff and young talents can express their suggestions, initiatives, and concerns at all levels 
                           <span className="text-primary font-semibold"> freely and directly with the DCEO</span>. This PPE Recycling Initiative exemplifies how employee-driven sustainability ideas become reality.
@@ -138,7 +138,7 @@ const DCEOSection = () => {
                       </blockquote>
                       
                       {/* HSE coordination info - visible on mobile inside collapsible */}
-                      <div className="bg-sustainability/10 p-4 rounded-lg border border-sustainability/20 sm:hidden mt-4">
+                      <div className="bg-red-100 border border-red-300 p-4 rounded-lg block sm:hidden mt-4">
                         <p className="text-foreground leading-relaxed text-sm">
                           Under his leadership, the initiative ensures smooth coordination and navigation across all HSE Teams and company directorates, maintaining the highest standards of safety and environmental compliance throughout the recycling process.
                         </p>
