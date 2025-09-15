@@ -1,6 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 const DCEOSection = () => {
+  const [isDCEOMessageExpanded, setIsDCEOMessageExpanded] = useState(false);
+  const [isHSEMessageExpanded, setIsHSEMessageExpanded] = useState(false);
   return (
     <section className="py-20 bg-gradient-to-br from-primary/5 to-sustainability/5">
       <div className="container mx-auto px-4">
@@ -49,13 +53,30 @@ const DCEOSection = () => {
                 {/* DCEO Message */}
                 <div className="p-8 bg-white">
                   <div className="mb-6">
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">DCEO Message</h4>
-                    <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6">
-                      "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
-                    </blockquote>
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary">DCEO Message</h4>
+                      {/* Mobile toggle button */}
+                      <button
+                        onClick={() => setIsDCEOMessageExpanded(!isDCEOMessageExpanded)}
+                        className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
+                        aria-label="Toggle DCEO message"
+                      >
+                        {isDCEOMessageExpanded ? (
+                          <ChevronUp className="w-5 h-5 text-primary" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-primary" />
+                        )}
+                      </button>
+                    </div>
+                    {/* Message content - always visible on desktop, collapsible on mobile */}
+                    <div className={`${isDCEOMessageExpanded ? 'block' : 'hidden'} md:block`}>
+                      <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6">
+                        "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
+                      </blockquote>
+                    </div>
                   </div>
                   
-                  <div className="bg-sustainability/5 p-4 rounded-lg">
+                  <div className={`bg-sustainability/5 p-4 rounded-lg ${isDCEOMessageExpanded ? 'block' : 'hidden'} md:block`}>
                     <p className="text-foreground leading-relaxed">
                       Through the <strong>Engage to Success (E2S) system</strong>, our integral staff and young talents can express their suggestions, initiatives, and concerns at all levels 
                       <span className="text-primary font-semibold"> freely and directly with the DCEO</span>. This PPE Recycling Initiative exemplifies how employee-driven sustainability ideas become reality.
@@ -86,13 +107,30 @@ const DCEOSection = () => {
                 {/* HSE Manager Message - Second on mobile, first on desktop */}
                 <div className="p-8 bg-white order-2 md:order-1">
                   <div className="mb-6">
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">HSE Manager Message</h4>
-                    <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6 mb-4">
-                      "As Manager of Health, Safety & Environment, I was entrusted with the responsibility to guide this transformative initiative and ensure seamless coordination across all HSE teams and company directorates. This PPE Recycling Initiative represents more than just waste management—it embodies our commitment to creating a sustainable future while maintaining the highest safety standards. Through collaborative efforts and innovative thinking, we are setting new benchmarks for environmental stewardship in the oil and gas sector. I am proud to lead this initiative that demonstrates how environmental responsibility and operational excellence can work hand in hand."
-                    </blockquote>
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary">HSE Manager Message</h4>
+                      {/* Mobile toggle button */}
+                      <button
+                        onClick={() => setIsHSEMessageExpanded(!isHSEMessageExpanded)}
+                        className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
+                        aria-label="Toggle HSE Manager message"
+                      >
+                        {isHSEMessageExpanded ? (
+                          <ChevronUp className="w-5 h-5 text-primary" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-primary" />
+                        )}
+                      </button>
+                    </div>
+                    {/* Message content - always visible on desktop, collapsible on mobile */}
+                    <div className={`${isHSEMessageExpanded ? 'block' : 'hidden'} md:block`}>
+                      <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6 mb-4">
+                        "As Manager of Health, Safety & Environment, I was entrusted with the responsibility to guide this transformative initiative and ensure seamless coordination across all HSE teams and company directorates. This PPE Recycling Initiative represents more than just waste management—it embodies our commitment to creating a sustainable future while maintaining the highest safety standards. Through collaborative efforts and innovative thinking, we are setting new benchmarks for environmental stewardship in the oil and gas sector. I am proud to lead this initiative that demonstrates how environmental responsibility and operational excellence can work hand in hand."
+                      </blockquote>
+                    </div>
                   </div>
                   
-                  <div className="bg-sustainability/5 p-4 rounded-lg">
+                  <div className={`bg-sustainability/5 p-4 rounded-lg ${isHSEMessageExpanded ? 'block' : 'hidden'} md:block`}>
                     <p className="text-foreground leading-relaxed">
                       Under his leadership, the initiative ensures smooth coordination and navigation across all HSE Teams and company directorates, maintaining the highest standards of safety and environmental compliance throughout the recycling process.
                     </p>
