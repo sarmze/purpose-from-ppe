@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, User } from "lucide-react";
 import { useState } from "react";
 
 const DCEOSection = () => {
@@ -40,6 +40,9 @@ const DCEOSection = () => {
               <div className="block md:hidden">
                 {/* DCEO Photo and Info */}
                 <div className="bg-gradient-corporate p-6 text-white text-center">
+                  <div className="w-32 h-32 rounded-full mx-auto mb-3 border-4 border-white/20 bg-white/10 flex items-center justify-center">
+                    <User className="w-16 h-16 text-white/70" />
+                  </div>
                   <h3 className="text-lg font-bold mb-1">Ameena Rajab Saleh</h3>
                   <p className="text-white/90 text-sm">Deputy CEO (Gas & Environment)</p>
                 </div>
@@ -82,6 +85,9 @@ const DCEOSection = () => {
                 {/* DCEO Photo and Info */}
                 <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center">
                   <div className="text-center">
+                    <div className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 bg-white/10 flex items-center justify-center">
+                      <User className="w-24 h-24 text-white/70" />
+                    </div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">Ameena Rajab Saleh</h3>
                     <p className="text-white/90 text-sm sm:text-base md:text-lg">Deputy CEO (Gas & Environment)</p>
                   </div>
