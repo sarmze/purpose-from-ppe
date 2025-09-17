@@ -40,11 +40,6 @@ const DCEOSection = () => {
               <div className="block md:hidden">
                 {/* DCEO Photo and Info */}
                 <div className="bg-gradient-corporate p-6 text-white text-center">
-                  <img 
-                    src="/src/assets/dceo-avatar-woman.jpg" 
-                    alt="Ameena Rajab Saleh - Deputy CEO" 
-                    className="w-32 h-32 rounded-full mx-auto mb-3 border-4 border-white/20 object-cover"
-                  />
                   <h3 className="text-lg font-bold mb-1">Ameena Rajab Saleh</h3>
                   <p className="text-white/90 text-sm">Deputy CEO (Gas & Environment)</p>
                 </div>
@@ -87,11 +82,6 @@ const DCEOSection = () => {
                 {/* DCEO Photo and Info */}
                 <div className="bg-gradient-corporate p-8 text-white flex flex-col justify-center">
                   <div className="text-center">
-                    <img 
-                      src="/src/assets/dceo-avatar-woman.jpg" 
-                      alt="Ameena Rajab Saleh - Deputy CEO" 
-                      className="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white/20 object-cover"
-                    />
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">Ameena Rajab Saleh</h3>
                     <p className="text-white/90 text-sm sm:text-base md:text-lg">Deputy CEO (Gas & Environment)</p>
                   </div>
