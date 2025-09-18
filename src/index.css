@@ -126,3 +126,125 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Print Styles */
+@media print {
+  /* Hide interactive elements */
+  .no-print,
+  button,
+  .print\\:hidden,
+  [role="button"],
+  nav,
+  .nav,
+  footer,
+  .footer,
+  .sidebar,
+  .toast,
+  .tooltip,
+  .dropdown,
+  .modal,
+  .dialog {
+    display: none !important;
+  }
+
+  /* Optimize layout for print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: #000 !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure content is visible */
+  .print\\:block {
+    display: block !important;
+  }
+
+  .print\\:inline {
+    display: inline !important;
+  }
+
+  .print\\:inline-block {
+    display: inline-block !important;
+  }
+
+  /* Fix text colors for print */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+    page-break-after: avoid;
+  }
+
+  p, div, span {
+    color: #000 !important;
+  }
+
+  /* Remove shadows and animations for print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Optimize images for print */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure cards and containers are visible */
+  .card, .container, .section {
+    border: 1px solid #ddd !important;
+    background: white !important;
+    color: #000 !important;
+    margin-bottom: 1rem !important;
+    page-break-inside: avoid;
+  }
+
+  /* Table optimization */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  table td, table th {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    color: #000 !important;
+  }
+
+  /* URL display for links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Hide URL for internal links */
+  a[href^="#"]:after,
+  a[href^="/"]:after {
+    content: "";
+  }
+}
