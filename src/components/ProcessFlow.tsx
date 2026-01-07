@@ -109,7 +109,7 @@ const ProcessFlow = () => {
       id: 5,
       title: "New Products",
       description: "Repurposed materials are transformed into daily usable bags",
-      icon: Recycle,
+      icon: Flower,
       color: "bg-emerald-500",
       details: ["Durable bags", "Eco-friendly products", "Sustainable accessories"]
     }
