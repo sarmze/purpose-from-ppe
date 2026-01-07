@@ -73,7 +73,7 @@ const ProcessFlow = () => {
     {
       id: 1,
       title: "Collection",
-      description: "Coveralls are collected from donation points across KOC facilities",
+      description: "Safety coveralls are collected from donation points across KOC facilities",
       icon: Shirt,
       color: "bg-blue-500",
       details: ["PPE collection bins", "Quality sorting", "Initial inspection"]
@@ -81,34 +81,34 @@ const ProcessFlow = () => {
     {
       id: 2,
       title: "Transportation",
-      description: "Collected coveralls are transported to uniform manufacturers",
+      description: "Collected coveralls are transported to certified textile facilities",
       icon: Truck,
       color: "bg-green-500",
-      details: ["Secure logistics", "Partner manufacturers", "Tracking system"]
+      details: ["Secure logistics", "Partner facilities", "Tracking system"]
     },
     {
       id: 3,
-      title: "De-identification",
-      description: "Coveralls undergo identity stripping to remove company branding and logos",
-      icon: UserMinus,
+      title: "Processing",
+      description: "Coveralls undergo cleaning, shredding, and textile processing",
+      icon: Factory,
       color: "bg-orange-500",
-      details: ["Logo removal", "Brand stripping", "Quality inspection"]
+      details: ["Material cleaning", "Textile breakdown", "Quality control"]
     },
     {
       id: 4,
-      title: "Preparation",
-      description: "De-identified coveralls are cleaned, sorted, and prepared for donation",
-      icon: Factory,
+      title: "Repurposing",
+      description: "Processed textile materials are prepared for manufacturing new products",
+      icon: Recycle,
       color: "bg-purple-500",
-      details: ["Professional cleaning", "Size sorting", "Quality control"]
+      details: ["Material preparation", "Quality testing", "Design integration"]
     },
     {
       id: 5,
-      title: "Charitable Donation",
-      description: "Prepared coveralls are distributed to charitable organizations for community benefit",
-      icon: Heart,
+      title: "New Products",
+      description: "Repurposed materials are transformed into daily usable bags",
+      icon: Recycle,
       color: "bg-emerald-500",
-      details: ["Community outreach", "Charitable distribution", "Impact tracking"]
+      details: ["Durable bags", "Eco-friendly products", "Sustainable accessories"]
     }
   ];
 
@@ -249,9 +249,9 @@ const ProcessFlow = () => {
                       <Shirt className="w-8 h-8 text-white" />
                     </div>
                     <div className="text-left">
-                      <h3 className="text-lg sm:text-xl font-bold mb-1">Coveralls</h3>
+                      <h3 className="text-lg sm:text-xl font-bold mb-1">Safety Coveralls</h3>
                       <p className="text-muted-foreground text-xs sm:text-sm">
-                        De-identified and donated to charities
+                        Repurposed into daily usable bags
                       </p>
                     </div>
                   </div>
@@ -277,8 +277,8 @@ const ProcessFlow = () => {
               ) : (
                 <ProcessFlowComponent 
                   processSteps={coverallProcess}
-                  title="Coverall Donation Journey"
-                  description="From workplace protection to community support"
+                  title="Safety Coverall Recycling Journey"
+                  description="From workplace protection to sustainable daily products"
                 />
               )}
             </div>
@@ -337,25 +337,25 @@ const ProcessFlow = () => {
                 <div>
                   <Badge className="mb-4">Our Mission</Badge>
                   <h3 className="text-2xl font-bold mb-4">
-                    From Work Coveralls to Community Support
+                    From Safety Coveralls to Daily Usable Bags
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Through our charitable initiative, we aim to give expired coveralls a second life 
-                    by de-identifying them and donating them to charitable organizations. This creates 
-                    meaningful community impact while reducing textile waste and supporting those in need.
+                    Through our innovative textile recycling initiative, we aim to transform expired safety coveralls 
+                    into durable, eco-friendly bags for daily use. Each bag will carry the story of sustainable 
+                    innovation, giving new life to protective workwear while reducing textile waste.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-sm">Complete de-identification process</span>
+                      <span className="text-sm">100% repurposed textile material</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-sm">Professional cleaning and preparation</span>
+                      <span className="text-sm">Durable and practical daily bags</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-sm">Donated to community charities</span>
+                      <span className="text-sm">Reduces textile waste significantly</span>
                     </div>
                   </div>
                 </div>
@@ -363,11 +363,11 @@ const ProcessFlow = () => {
                   <div className="relative overflow-hidden rounded-xl shadow-2xl">
                     <img 
                       src={coverallsCharityImage} 
-                      alt="Vision: De-identified coveralls ready for charitable donation"
+                      alt="Vision: Safety coveralls transformed into sustainable bags"
                       className="w-full h-80 object-cover"
                     />
                     <div className="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Community Impact
+                      Recycled PPE
                     </div>
                   </div>
                 </div>
