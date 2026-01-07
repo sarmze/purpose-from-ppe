@@ -45,7 +45,7 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
           <Button 
             variant="hero" 
             size="lg" 
-            className="animate-float text-xl px-12 py-6 h-auto cursor-pointer"
+            className="text-xl px-12 py-6 h-auto cursor-pointer"
             onClick={handleDonateClick}
           >
             Participate Now
