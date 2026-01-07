@@ -17,7 +17,10 @@ import {
   ChevronUp
 } from "lucide-react";
 import recycledPotImage from "/lovable-uploads/0eb2a6b2-94de-4a5c-84f3-eb9f46e43b43.png";
-import coverallsCharityImage from "@/assets/coveralls-handover-charity.jpg";
+import recycledDuffleBag from "@/assets/recycled-duffle-bag.png";
+import recycledToteBag from "@/assets/recycled-tote-bag.png";
+import recycledPouchBag from "@/assets/recycled-pouch-bag.png";
+import recycledLaptopSleeve from "@/assets/recycled-laptop-sleeve.png";
 
 const ProcessFlow = () => {
   const [selectedProcess, setSelectedProcess] = useState<'helmets' | 'coveralls' | null>(null);
@@ -360,15 +363,38 @@ const ProcessFlow = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                    <img 
-                      src={coverallsCharityImage} 
-                      alt="Vision: Safety coveralls transformed into sustainable bags"
-                      className="w-full h-80 object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Recycled PPE
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg">
+                      <img 
+                        src={recycledDuffleBag} 
+                        alt="Recycled duffle bag from safety coveralls"
+                        className="w-full h-40 object-contain bg-white"
+                      />
                     </div>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg">
+                      <img 
+                        src={recycledToteBag} 
+                        alt="Recycled tote bag from safety coveralls"
+                        className="w-full h-40 object-contain bg-white"
+                      />
+                    </div>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg">
+                      <img 
+                        src={recycledPouchBag} 
+                        alt="Recycled pouch bag from safety coveralls"
+                        className="w-full h-40 object-contain bg-white"
+                      />
+                    </div>
+                    <div className="relative overflow-hidden rounded-xl shadow-lg">
+                      <img 
+                        src={recycledLaptopSleeve} 
+                        alt="Recycled laptop sleeve from safety coveralls"
+                        className="w-full h-40 object-contain bg-white"
+                      />
+                    </div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Recycled PPE
                   </div>
                 </div>
               </div>
