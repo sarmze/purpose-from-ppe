@@ -324,9 +324,6 @@ const ProcessFlow = () => {
                       alt="Vision: Safety helmet to be transformed into plant pot"
                       className="w-full h-80 object-cover"
                     />
-                    <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      Recycled PPE
-                    </div>
                   </div>
                 </div>
               </div>
@@ -392,9 +389,6 @@ const ProcessFlow = () => {
                         className="w-full h-40 object-contain bg-white"
                       />
                     </div>
-                  </div>
-                  <div className="absolute -top-2 -right-2 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Recycled PPE
                   </div>
                 </div>
               </div>
