@@ -37,7 +37,7 @@ const DonationForm = () => {
     setIsSubmitted(true);
     toast({
       title: "Story submitted successfully!",
-      description: "Thank you for participating in the KOC PPE Recycling Initiative.",
+      description: "Thank you for participating in the KOC PPE Recycling Campaign.",
     });
   };
 
