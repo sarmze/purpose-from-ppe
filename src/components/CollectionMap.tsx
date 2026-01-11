@@ -54,13 +54,6 @@ const CollectionMap = () => {
     }
   ];
 
-  // Create Google Maps embed URL with all locations
-  const createMapUrl = () => {
-    const center = '29.2919,47.9824'; // Kuwait center
-    const locations = collectionBins.map(bin => `${bin.coordinates}`).join('|');
-    return `https://www.google.com/maps/embed/v1/view?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dw901SwHSR119E&center=${center}&zoom=8&maptype=roadmap`;
-  };
-
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
