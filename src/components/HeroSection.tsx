@@ -32,11 +32,11 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
               className="h-32 sm:h-48 md:h-60 w-auto mx-auto"
             />
           </div>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-2 sm:mb-4 leading-tight tracking-tight">
             KOC PPE Recycling
             <span className="block text-sustainability-light">Initiative</span>
           </h1>
-          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4 text-white/95">
             Give Your PPE a Second Life
           </p>
           <p className="text-xs sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto opacity-90 px-4">
