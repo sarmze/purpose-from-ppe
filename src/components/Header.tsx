@@ -55,7 +55,7 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
                 KOC PPE Recycling Initiative
               </h1>
               <p className={`text-xs sm:text-sm transition-colors duration-300 ${isScrolled ? "text-primary/80" : "text-primary-foreground/80"} hidden sm:block`}>
-                From Protection to Purpose
+                Give Your PPE a Second Life
               </p>
             </div>
           </div>

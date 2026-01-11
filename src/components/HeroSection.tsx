@@ -37,7 +37,7 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
             <span className="block text-sustainability-light">Initiative</span>
           </h1>
           <p className="text-sm sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
-            From Protection to Purpose – Giving PPE a Second Life
+            Give Your PPE a Second Life
           </p>
           <p className="text-xs sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto opacity-90 px-4">
             Join our sustainability mission to transform expired safety equipment into meaningful environmental impact

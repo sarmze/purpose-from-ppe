@@ -90,7 +90,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-primary-foreground/80">
               <p>&copy; 2024 Kuwait Oil Company. All rights reserved.</p>
               <span className="hidden md:block">|</span>
-              <p>From Protection to Purpose Initiative</p>
+              <p>Give Your PPE a Second Life Initiative</p>
             </div>
             
             <div className="flex items-center gap-4 text-sm">
