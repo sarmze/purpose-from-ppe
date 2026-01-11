@@ -52,7 +52,7 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
             />
             <div className="min-w-0 flex-1">
               <h1 className={`text-sm sm:text-xl font-bold transition-colors duration-300 ${textColorClass} truncate`}>
-                KOC PPE Recycling Initiative
+                KOC PPE Recycling Campaign
               </h1>
               <p className={`text-xs sm:text-sm transition-colors duration-300 ${isScrolled ? "text-primary/80" : "text-primary-foreground/80"} hidden sm:block`}>
                 Give Your PPE a Second Life

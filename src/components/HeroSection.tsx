@@ -34,7 +34,7 @@ const HeroSection = ({ onTabChange }: HeroSectionProps) => {
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-2 sm:mb-4 leading-tight tracking-tight">
             KOC PPE Recycling
-            <span className="block text-sustainability-light">Initiative</span>
+            <span className="block text-sustainability-light">Campaign</span>
           </h1>
           <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4 text-white/95">
             Give Your PPE a Second Life

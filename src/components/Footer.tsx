@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Company Info */}
             <div>
-              <h3 className="text-2xl font-bold mb-4">KOC PPE Recycling Initiative</h3>
+              <h3 className="text-2xl font-bold mb-4">KOC PPE Recycling Campaign</h3>
               <p className="text-primary-foreground/90 mb-6 leading-relaxed">
                 Leading Kuwait's energy sector towards a sustainable future through innovative 
                 recycling programs and environmental stewardship.

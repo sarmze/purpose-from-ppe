@@ -26,7 +26,7 @@ const DCEOSection = () => {
                 From Vision to Action
               </h3>
               <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed max-w-4xl mx-auto">
-                The KOC PPE Recycling Initiative was born from Deputy CEO Ameena Rajab Saleh's commitment to environmental sustainability 
+                The KOC PPE Recycling Campaign was born from Deputy CEO Ameena Rajab Saleh's commitment to environmental sustainability
                 and her vision of transforming everyday operations into meaningful environmental impact. Her leadership in the Gas & Environment 
                 sector drives innovation that benefits our company.
               </p>

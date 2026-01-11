@@ -44,7 +44,7 @@ const HowItWorksSection = () => {
               How It Works
             </h2>
             <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Follow these simple steps to participate in the KOC PPE Recycling Initiative
+              Follow these simple steps to participate in the KOC PPE Recycling Campaign
             </p>
           </div>
 
