@@ -8,6 +8,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Mic, MicOff, Send, CheckCircle, Play, Pause, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useAudioRecorder } from "@/hooks/useAudioRecorder";
+import { z } from "zod";
+
+// Validation schema for form data
+const donationFormSchema = z.object({
+  employeeId: z
+    .string()
+    .min(1, "KOC ID is required")
+    .max(50, "KOC ID must be less than 50 characters")
+    .regex(/^[a-zA-Z0-9-]+$/, "KOC ID can only contain letters, numbers, and hyphens"),
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters")
+    .regex(/^[a-zA-Z\s'-]+$/, "Name can only contain letters, spaces, hyphens, and apostrophes"),
+  hasDonated: z.literal(true, {
+    errorMap: () => ({ message: "You must confirm that you have donated PPE" }),
+  }),
+  story: z
+    .string()
+    .max(2000, "Story must be less than 2000 characters")
+    .optional()
+    .transform((val) => val?.trim() || ""),
+});
+
+type DonationFormData = z.infer<typeof donationFormSchema>;
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
@@ -16,24 +41,46 @@ const DonationForm = () => {
     hasDonated: false,
     story: ""
   });
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const { toast } = useToast();
   const { isRecording, audioData, error, startRecording, stopRecording, clearRecording } = useAudioRecorder();
 
+  const validateForm = (): boolean => {
+    const result = donationFormSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const errors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as string;
+        if (!errors[field]) {
+          errors[field] = err.message;
+        }
+      });
+      setFormErrors(errors);
+      return false;
+    }
+    
+    setFormErrors({});
+    return true;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.hasDonated) {
+    if (!validateForm()) {
+      const firstError = Object.values(formErrors)[0] || "Please fix the form errors";
       toast({
-        title: "Please confirm your donation",
-        description: "You must confirm that you have donated PPE to submit your story.",
+        title: "Validation Error",
+        description: firstError,
         variant: "destructive"
       });
       return;
     }
 
-    // Simulate form submission
+    // Simulate form submission (no backend currently)
+    // When backend is added, validated data should be sent server-side
     setIsSubmitted(true);
     toast({
       title: "Story submitted successfully!",
@@ -149,9 +196,19 @@ const DonationForm = () => {
                       type="text"
                       placeholder="Enter your KOC ID"
                       value={formData.employeeId}
-                      onChange={(e) => setFormData(prev => ({ ...prev, employeeId: e.target.value }))}
+                      onChange={(e) => {
+                        setFormData(prev => ({ ...prev, employeeId: e.target.value }));
+                        if (formErrors.employeeId) {
+                          setFormErrors(prev => ({ ...prev, employeeId: "" }));
+                        }
+                      }}
+                      maxLength={50}
+                      className={formErrors.employeeId ? "border-destructive" : ""}
                       required
                     />
+                    {formErrors.employeeId && (
+                      <p className="text-sm text-destructive">{formErrors.employeeId}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>
@@ -160,25 +217,41 @@ const DonationForm = () => {
                       type="text"
                       placeholder="Enter your full name"
                       value={formData.name}
-                      onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                      onChange={(e) => {
+                        setFormData(prev => ({ ...prev, name: e.target.value }));
+                        if (formErrors.name) {
+                          setFormErrors(prev => ({ ...prev, name: "" }));
+                        }
+                      }}
+                      maxLength={100}
+                      className={formErrors.name ? "border-destructive" : ""}
                       required
                     />
+                    {formErrors.name && (
+                      <p className="text-sm text-destructive">{formErrors.name}</p>
+                    )}
                   </div>
                 </div>
 
                 {/* Donation Confirmation */}
-                <div className="flex items-center space-x-2 p-4 bg-accent rounded-lg">
+                <div className={`flex items-center space-x-2 p-4 rounded-lg ${formErrors.hasDonated ? "bg-destructive/10 border border-destructive" : "bg-accent"}`}>
                   <Checkbox
                     id="hasDonated"
                     checked={formData.hasDonated}
-                    onCheckedChange={(checked) => 
-                      setFormData(prev => ({ ...prev, hasDonated: checked as boolean }))
-                    }
+                    onCheckedChange={(checked) => {
+                      setFormData(prev => ({ ...prev, hasDonated: checked as boolean }));
+                      if (formErrors.hasDonated) {
+                        setFormErrors(prev => ({ ...prev, hasDonated: "" }));
+                      }
+                    }}
                   />
                   <Label htmlFor="hasDonated" className="text-accent-foreground font-medium">
                     I have submitted my PPE to the collection bins
                   </Label>
                 </div>
+                {formErrors.hasDonated && (
+                  <p className="text-sm text-destructive -mt-4">{formErrors.hasDonated}</p>
+                )}
 
                 {/* Story Section */}
                 <div className="space-y-4">
@@ -190,10 +263,20 @@ const DonationForm = () => {
                   <Textarea
                     placeholder="Share your KOC journey, why sustainability matters to you, or your PPE recycling experience..."
                     value={formData.story}
-                    onChange={(e) => setFormData(prev => ({ ...prev, story: e.target.value }))}
+                    onChange={(e) => {
+                      setFormData(prev => ({ ...prev, story: e.target.value }));
+                      if (formErrors.story) {
+                        setFormErrors(prev => ({ ...prev, story: "" }));
+                      }
+                    }}
                     rows={4}
-                    className="resize-none"
+                    maxLength={2000}
+                    className={`resize-none ${formErrors.story ? "border-destructive" : ""}`}
                   />
+                  <div className="flex justify-between text-sm text-muted-foreground">
+                    <span>{formErrors.story && <span className="text-destructive">{formErrors.story}</span>}</span>
+                    <span>{formData.story.length}/2000</span>
+                  </div>
 
                   {/* Voice Recording Option */}
                   <div className="space-y-4 p-4 border rounded-lg">
