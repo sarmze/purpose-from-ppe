@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HardHat, Shirt, Leaf, TrendingUp } from "lucide-react";
+import { HardHat, Shirt, Leaf, TrendingUp, Users } from "lucide-react";
 
 const ImpactDashboard = () => {
   const [counters, setCounters] = useState({
@@ -50,11 +50,11 @@ const ImpactDashboard = () => {
       description: "Repurposed for visitor line and charity donations"
     },
     {
-      title: "CO₂ Emissions Prevented",
-      value: `${counters.carbonSaved.toFixed(1)} tons`,
-      icon: Leaf,
+      title: "Employees Participated",
+      value: Math.round(counters.helmets * 0.6).toLocaleString(),
+      icon: Users,
       gradient: "bg-gradient-corporate",
-      description: "Based on collected materials avoiding landfill"
+      description: "KOC team members contributing to sustainability"
     },
     {
       title: "Estimated Plant Pots",
@@ -136,8 +136,8 @@ const ImpactDashboard = () => {
                   <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Leaf className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-3xl font-bold text-amber-600 mb-1">{Math.round((counters.helmets + counters.coveralls) * 0.5)}</p>
-                  <p className="text-sm text-muted-foreground">Trees equivalent saved</p>
+                  <p className="text-3xl font-bold text-amber-600 mb-1">{counters.carbonSaved.toFixed(1)} tons</p>
+                  <p className="text-sm text-muted-foreground">CO₂ emissions prevented</p>
                 </div>
               </div>
               
