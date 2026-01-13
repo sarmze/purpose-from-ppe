@@ -15,7 +15,7 @@ import StoriesBoard from "@/components/StoriesBoard";
 import CampaignVideos from "@/components/CampaignVideos";
 import IncentivesSection from "@/components/IncentivesSection";
 import ImpactDashboard from "@/components/ImpactDashboard";
-import PartnersSection from "@/components/PartnersSection";
+
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -52,7 +52,6 @@ const Index = () => {
           <div className="pt-24 sm:pt-20">
             <ImpactDashboard />
             <StoriesBoard />
-            <PartnersSection />
           </div>
         </TabsContent>
       </Tabs>
