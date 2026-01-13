@@ -109,82 +109,45 @@ const ImpactDashboard = () => {
             ))}
           </div>
 
-          {/* Visual Impact Section */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Transformation Visual */}
-            <Card className="shadow-elevated animate-fade-in">
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">PPE Transformation Journey</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 bg-accent rounded-lg">
-                    <HardHat className="w-8 h-8 text-accent-foreground" />
-                    <div className="flex-1">
-                      <p className="font-semibold text-accent-foreground">Safety Helmet</p>
-                      <p className="text-sm text-muted-foreground">After 3-5 years of protection</p>
-                    </div>
-                    <div className="text-2xl">→</div>
+          {/* Environmental Breakdown */}
+          <Card className="shadow-elevated animate-fade-in">
+            <CardHeader>
+              <CardTitle className="text-xl text-foreground">Environmental Impact Breakdown</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-6 bg-blue-50 rounded-xl">
+                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <HardHat className="w-6 h-6 text-white" />
                   </div>
-                  <div className="flex items-center gap-4 p-4 bg-sustainability-light rounded-lg">
-                    <TrendingUp className="w-8 h-8 text-sustainability-dark" />
-                    <div className="flex-1">
-                      <p className="font-semibold text-sustainability-dark">Plant Pot</p>
-                      <p className="text-sm text-muted-foreground">Growing new life</p>
-                    </div>
-                  </div>
+                  <p className="text-3xl font-bold text-blue-600 mb-1">{Math.round(counters.helmets * 0.8)}kg</p>
+                  <p className="text-sm text-muted-foreground">Plastic diverted from landfill</p>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Collection Summary */}
-            <Card className="shadow-elevated animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">Collection Summary</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                        <HardHat className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Safety Helmets</p>
-                        <p className="text-sm text-muted-foreground">Collected to date</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-blue-600">{counters.helmets.toLocaleString()}</div>
-                      <div className="text-xs text-muted-foreground">units</div>
-                    </div>
+                
+                <div className="text-center p-6 bg-emerald-50 rounded-xl">
+                  <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Shirt className="w-6 h-6 text-white" />
                   </div>
-                  
-                  <div className="flex items-center justify-between p-4 bg-emerald-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
-                        <Shirt className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Coveralls</p>
-                        <p className="text-sm text-muted-foreground">Collected to date</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-emerald-600">{counters.coveralls.toLocaleString()}</div>
-                      <div className="text-xs text-muted-foreground">units</div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t">
-                    <p className="text-sm text-muted-foreground text-center">
-                      Environmental impact calculated from actual collection data
-                    </p>
-                  </div>
+                  <p className="text-3xl font-bold text-emerald-600 mb-1">{Math.round(counters.coveralls * 1.2)}kg</p>
+                  <p className="text-sm text-muted-foreground">Textile waste repurposed</p>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+                
+                <div className="text-center p-6 bg-amber-50 rounded-xl">
+                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Leaf className="w-6 h-6 text-white" />
+                  </div>
+                  <p className="text-3xl font-bold text-amber-600 mb-1">{Math.round((counters.helmets + counters.coveralls) * 0.5)}</p>
+                  <p className="text-sm text-muted-foreground">Trees equivalent saved</p>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-6 border-t text-center">
+                <p className="text-sm text-muted-foreground">
+                  Impact metrics calculated based on industry-standard environmental conversion factors
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
