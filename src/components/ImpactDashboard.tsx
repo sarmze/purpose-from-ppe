@@ -18,7 +18,7 @@ const ImpactDashboard = () => {
     carbonSaved: 3.2,
     plantsGrown: 456,
     bagsMade: 312,
-    storiesShared: 48
+    storiesShared: 6
   };
 
   useEffect(() => {
