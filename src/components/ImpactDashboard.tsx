@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HardHat, Shirt, Leaf, TrendingUp, Users } from "lucide-react";
+import { HardHat, Shirt, Leaf, TrendingUp, Users, ShoppingBag } from "lucide-react";
 
 const ImpactDashboard = () => {
   const [counters, setCounters] = useState({
     helmets: 0,
     coveralls: 0,
     carbonSaved: 0,
-    plantsGrown: 0
+    plantsGrown: 0,
+    bagsMade: 0
   });
 
   const finalValues = {
     helmets: 1247,
     coveralls: 892,
     carbonSaved: 3.2,
-    plantsGrown: 456
+    plantsGrown: 456,
+    bagsMade: 312
   };
 
   useEffect(() => {
@@ -27,7 +29,8 @@ const ImpactDashboard = () => {
         helmets: Math.min(prev.helmets + Math.ceil(finalValues.helmets / steps), finalValues.helmets),
         coveralls: Math.min(prev.coveralls + Math.ceil(finalValues.coveralls / steps), finalValues.coveralls),
         carbonSaved: Math.min(prev.carbonSaved + (finalValues.carbonSaved / steps), finalValues.carbonSaved),
-        plantsGrown: Math.min(prev.plantsGrown + Math.ceil(finalValues.plantsGrown / steps), finalValues.plantsGrown)
+        plantsGrown: Math.min(prev.plantsGrown + Math.ceil(finalValues.plantsGrown / steps), finalValues.plantsGrown),
+        bagsMade: Math.min(prev.bagsMade + Math.ceil(finalValues.bagsMade / steps), finalValues.bagsMade)
       }));
     }, interval);
 
@@ -62,6 +65,13 @@ const ImpactDashboard = () => {
       icon: TrendingUp,
       gradient: "bg-gradient-sustainability",
       description: "Potential plant pots from collected helmets"
+    },
+    {
+      title: "Estimated Bags Made",
+      value: counters.bagsMade.toLocaleString(),
+      icon: ShoppingBag,
+      gradient: "bg-gradient-corporate",
+      description: "Tote and duffle bags from recycled coveralls"
     }
   ];
 
@@ -80,7 +90,7 @@ const ImpactDashboard = () => {
           </div>
 
           {/* Impact Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {impactCards.map((card, index) => (
               <Card 
                 key={index} 
