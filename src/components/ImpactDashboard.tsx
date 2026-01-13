@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HardHat, Shirt, Leaf, TrendingUp, Users, ShoppingBag } from "lucide-react";
+import { HardHat, Shirt, Leaf, TrendingUp, Users, ShoppingBag, MessageSquare } from "lucide-react";
 
 const ImpactDashboard = () => {
   const [counters, setCounters] = useState({
@@ -8,7 +8,8 @@ const ImpactDashboard = () => {
     coveralls: 0,
     carbonSaved: 0,
     plantsGrown: 0,
-    bagsMade: 0
+    bagsMade: 0,
+    storiesShared: 0
   });
 
   const finalValues = {
@@ -16,7 +17,8 @@ const ImpactDashboard = () => {
     coveralls: 892,
     carbonSaved: 3.2,
     plantsGrown: 456,
-    bagsMade: 312
+    bagsMade: 312,
+    storiesShared: 48
   };
 
   useEffect(() => {
@@ -30,7 +32,8 @@ const ImpactDashboard = () => {
         coveralls: Math.min(prev.coveralls + Math.ceil(finalValues.coveralls / steps), finalValues.coveralls),
         carbonSaved: Math.min(prev.carbonSaved + (finalValues.carbonSaved / steps), finalValues.carbonSaved),
         plantsGrown: Math.min(prev.plantsGrown + Math.ceil(finalValues.plantsGrown / steps), finalValues.plantsGrown),
-        bagsMade: Math.min(prev.bagsMade + Math.ceil(finalValues.bagsMade / steps), finalValues.bagsMade)
+        bagsMade: Math.min(prev.bagsMade + Math.ceil(finalValues.bagsMade / steps), finalValues.bagsMade),
+        storiesShared: Math.min(prev.storiesShared + Math.ceil(finalValues.storiesShared / steps), finalValues.storiesShared)
       }));
     }, interval);
 
@@ -71,7 +74,14 @@ const ImpactDashboard = () => {
       value: counters.bagsMade.toLocaleString(),
       icon: ShoppingBag,
       gradient: "bg-gradient-corporate",
-      description: "Tote and duffle bags from recycled coveralls"
+      description: "Tote, duffle, pouch, and laptop bags from coveralls"
+    },
+    {
+      title: "Stories Shared",
+      value: counters.storiesShared.toLocaleString(),
+      icon: MessageSquare,
+      gradient: "bg-gradient-sustainability",
+      description: "Employee experiences inspiring the community"
     }
   ];
 
