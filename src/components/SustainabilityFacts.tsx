@@ -5,8 +5,7 @@ import {
   Recycle, 
   Globe, 
   Factory,
-  TrendingDown,
-  Heart
+  TrendingDown
 } from "lucide-react";
 
 const SustainabilityFacts = () => {
@@ -45,13 +44,6 @@ const SustainabilityFacts = () => {
       description: "Less energy required to recycle plastic than produce new materials",
       color: "bg-emerald-500",
       category: "Energy Savings"
-    },
-    {
-      icon: Heart,
-      stat: "1000+",
-      description: "Families we aim to benefit through donated de-identified coveralls annually",
-      color: "bg-purple-500",
-      category: "Community Goal"
     }
   ];
 
