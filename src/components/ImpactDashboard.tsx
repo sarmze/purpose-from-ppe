@@ -2,23 +2,67 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HardHat, Shirt, Leaf, TrendingUp, Users, ShoppingBag, MessageSquare } from "lucide-react";
 
+/**
+ * Environmental Impact Conversion Factors (Research-Backed)
+ * 
+ * HELMET CALCULATIONS:
+ * - Average safety helmet weight: 0.46 kg (460g with suspension)
+ *   Source: Industry standard HDPE/ABS safety helmets
+ * - CO₂ savings from recycling HDPE: 0.231 kg CO₂e per kg recycled
+ *   Source: EPA Emission Factors (2022) - HDPE recycling vs landfill
+ * - Additional CO₂ from avoided virgin production: 1.8 kg CO₂e per kg
+ *   Source: Plastics Europe eco-profiles
+ * - Total CO₂ factor: ~2.03 kg CO₂e per kg (recycling + avoided virgin)
+ * 
+ * COVERALL CALCULATIONS:
+ * - Average coverall weight: 0.85 kg (7 oz FR coverall = ~850g)
+ *   Source: Industry standard oilfield FR coveralls (7 oz fabric weight)
+ * - CO₂ savings from textile reuse/recycling: 70% reduction vs virgin
+ *   Source: Sustainable Apparel Coalition's Higg MSI
+ * - Virgin polyester production: 5.5 kg CO₂e per kg
+ *   Source: Higg Materials Sustainability Index
+ * - Savings factor: 5.5 × 0.70 = 3.85 kg CO₂e per kg repurposed
+ */
+
+// Conversion constants based on industry research
+const HELMET_WEIGHT_KG = 0.46; // Average safety helmet with suspension (460g)
+const COVERALL_WEIGHT_KG = 0.85; // Average 7oz FR coverall (~850g)
+const HELMET_CO2_FACTOR = 2.03; // kg CO₂e saved per kg HDPE recycled (recycling + avoided virgin)
+const COVERALL_CO2_FACTOR = 3.85; // kg CO₂e saved per kg textile repurposed (70% of 5.5 virgin)
+
 const ImpactDashboard = () => {
+  // Raw collection numbers
+  const helmetsCollected = 1247;
+  const coverallsCollected = 892;
+  const storiesSharedCount = 6;
+
+  // Calculate derived environmental metrics
+  const plasticDiverted = helmetsCollected * HELMET_WEIGHT_KG; // kg of plastic
+  const textileRepurposed = coverallsCollected * COVERALL_WEIGHT_KG; // kg of textile
+  const helmetCO2Saved = plasticDiverted * HELMET_CO2_FACTOR; // kg CO₂e from helmets
+  const coverallCO2Saved = textileRepurposed * COVERALL_CO2_FACTOR; // kg CO₂e from coveralls
+  const totalCO2Saved = (helmetCO2Saved + coverallCO2Saved) / 1000; // Convert to tons
+
   const [counters, setCounters] = useState({
     helmets: 0,
     coveralls: 0,
     carbonSaved: 0,
     plantsGrown: 0,
     bagsMade: 0,
-    storiesShared: 0
+    storiesShared: 0,
+    plasticKg: 0,
+    textileKg: 0
   });
 
   const finalValues = {
-    helmets: 1247,
-    coveralls: 892,
-    carbonSaved: 3.2,
+    helmets: helmetsCollected,
+    coveralls: coverallsCollected,
+    carbonSaved: totalCO2Saved,
     plantsGrown: 456,
     bagsMade: 312,
-    storiesShared: 6
+    storiesShared: storiesSharedCount,
+    plasticKg: plasticDiverted,
+    textileKg: textileRepurposed
   };
 
   useEffect(() => {
@@ -33,7 +77,9 @@ const ImpactDashboard = () => {
         carbonSaved: Math.min(prev.carbonSaved + (finalValues.carbonSaved / steps), finalValues.carbonSaved),
         plantsGrown: Math.min(prev.plantsGrown + Math.ceil(finalValues.plantsGrown / steps), finalValues.plantsGrown),
         bagsMade: Math.min(prev.bagsMade + Math.ceil(finalValues.bagsMade / steps), finalValues.bagsMade),
-        storiesShared: Math.min(prev.storiesShared + Math.ceil(finalValues.storiesShared / steps), finalValues.storiesShared)
+        storiesShared: Math.min(prev.storiesShared + Math.ceil(finalValues.storiesShared / steps), finalValues.storiesShared),
+        plasticKg: Math.min(prev.plasticKg + (finalValues.plasticKg / steps), finalValues.plasticKg),
+        textileKg: Math.min(prev.textileKg + (finalValues.textileKg / steps), finalValues.textileKg)
       }));
     }, interval);
 
@@ -140,31 +186,38 @@ const ImpactDashboard = () => {
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <HardHat className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-3xl font-bold text-blue-600 mb-1">{Math.round(counters.helmets * 0.8)}kg</p>
+                  <p className="text-3xl font-bold text-blue-600 mb-1">{Math.round(counters.plasticKg)} kg</p>
                   <p className="text-sm text-muted-foreground">Plastic diverted from landfill</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">({HELMET_WEIGHT_KG} kg/helmet × {helmetsCollected} helmets)</p>
                 </div>
                 
                 <div className="text-center p-6 bg-emerald-50 rounded-xl">
                   <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Shirt className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-3xl font-bold text-emerald-600 mb-1">{Math.round(counters.coveralls * 1.2)}kg</p>
+                  <p className="text-3xl font-bold text-emerald-600 mb-1">{Math.round(counters.textileKg)} kg</p>
                   <p className="text-sm text-muted-foreground">Textile waste repurposed</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">({COVERALL_WEIGHT_KG} kg/coverall × {coverallsCollected} coveralls)</p>
                 </div>
                 
                 <div className="text-center p-6 bg-amber-50 rounded-xl">
                   <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Leaf className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-3xl font-bold text-amber-600 mb-1">{counters.carbonSaved.toFixed(1)} tons</p>
+                  <p className="text-3xl font-bold text-amber-600 mb-1">{counters.carbonSaved.toFixed(2)} tons</p>
                   <p className="text-sm text-muted-foreground">CO₂ emissions prevented</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">(HDPE: {HELMET_CO2_FACTOR} + Textile: {COVERALL_CO2_FACTOR} kg CO₂e/kg)</p>
                 </div>
               </div>
               
-              <div className="mt-6 pt-6 border-t text-center">
-                <p className="text-sm text-muted-foreground">
-                  Impact metrics calculated based on industry-standard environmental conversion factors
+              <div className="mt-6 pt-6 border-t">
+                <p className="text-sm text-muted-foreground text-center mb-3">
+                  Impact metrics calculated using industry-standard conversion factors
                 </p>
+                <div className="text-xs text-muted-foreground/70 space-y-1 max-w-2xl mx-auto">
+                  <p><strong>Sources:</strong> EPA Emission Factors (2022), Sustainable Apparel Coalition Higg MSI, Plastics Europe eco-profiles</p>
+                  <p><strong>Formulas:</strong> Plastic = helmets × 0.46kg | Textile = coveralls × 0.85kg | CO₂ = (plastic × 2.03 + textile × 3.85) kg</p>
+                </div>
               </div>
             </CardContent>
           </Card>
