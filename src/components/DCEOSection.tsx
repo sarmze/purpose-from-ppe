@@ -66,7 +66,7 @@ const DCEOSection = () => {
                   
                   <div className={`${isDCEOMessageExpanded ? 'block' : 'hidden'}`}>
                     <blockquote className="text-foreground leading-relaxed text-sm italic border-l-4 border-primary pl-4 mb-4">
-                      "Every safety helmet and coverall that has served its purpose on our sites carries a story of protection and dedication. Through the PPE Recycling Campaign, we are giving these items a second life—transforming them into meaningful products that benefit our communities and our environment. Sustainability starts with the ideas of our people, and I am proud that KOC employees are leading by example, showing that environmental stewardship and operational excellence go hand in hand."
+                      "At KOC, we believe that sustainability is not just a responsibility—it is an opportunity. The PPE Recycling Campaign reflects our commitment to reducing waste, protecting our environment, and transforming used safety equipment into valuable resources for our communities. By collecting and recycling helmets and coveralls, we are diverting thousands of kilograms from landfills and turning them into products that make a real difference. I call on every KOC employee to participate and help us set a new standard for environmental leadership in the oil and gas industry."
                     </blockquote>
                     
                     {/* E2S system info for mobile */}
@@ -98,7 +98,7 @@ const DCEOSection = () => {
                   <div className="mb-6">
                     <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">DCEO Message</h4>
                     <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6 mb-4">
-                      "Every safety helmet and coverall that has served its purpose on our sites carries a story of protection and dedication. Through the PPE Recycling Campaign, we are giving these items a second life—transforming them into meaningful products that benefit our communities and our environment. Sustainability starts with the ideas of our people, and I am proud that KOC employees are leading by example, showing that environmental stewardship and operational excellence go hand in hand."
+                      "At KOC, we believe that sustainability is not just a responsibility—it is an opportunity. The PPE Recycling Campaign reflects our commitment to reducing waste, protecting our environment, and transforming used safety equipment into valuable resources for our communities. By collecting and recycling helmets and coveralls, we are diverting thousands of kilograms from landfills and turning them into products that make a real difference. I call on every KOC employee to participate and help us set a new standard for environmental leadership in the oil and gas industry."
                     </blockquote>
                   </div>
                   
