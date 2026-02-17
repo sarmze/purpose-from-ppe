@@ -66,7 +66,7 @@ const DCEOSection = () => {
                   
                   <div className={`${isDCEOMessageExpanded ? 'block' : 'hidden'}`}>
                     <blockquote className="text-foreground leading-relaxed text-sm italic border-l-4 border-primary pl-4 mb-4">
-                      "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
+                      "Every safety helmet and coverall that has served its purpose on our sites carries a story of protection and dedication. Through the PPE Recycling Campaign, we are giving these items a second life—transforming them into meaningful products that benefit our communities and our environment. This initiative, born from our Engage to Success (E2S) system, proves that sustainability starts with the ideas of our people. I am proud that KOC employees are leading by example, showing that environmental stewardship and operational excellence go hand in hand."
                     </blockquote>
                     
                     {/* E2S system info for mobile */}
@@ -98,7 +98,7 @@ const DCEOSection = () => {
                   <div className="mb-6">
                     <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4">DCEO Message</h4>
                     <blockquote className="text-foreground leading-relaxed text-sm sm:text-base md:text-lg italic border-l-4 border-primary pl-6 mb-4">
-                      "I'm very proud to be part of this directorate with many leading initiatives and projects adding a great value to oil and gas sector while maintaining a sustainable environment. Our integral staff and young talents are one of the strengths that I have been always believing in when it comes to elevating the achievements. Therefore, staying connected is crucial. The establishment of the Engage to Success (E2S) system is the venue where all employees can express their suggestions, initiatives and concerns in all levels freely and directly with the DCEO. I encourage you all to take advantage of it and use it wisely and effectively to flag any possible obstacles which were disregarded."
+                      "Every safety helmet and coverall that has served its purpose on our sites carries a story of protection and dedication. Through the PPE Recycling Campaign, we are giving these items a second life—transforming them into meaningful products that benefit our communities and our environment. This initiative, born from our Engage to Success (E2S) system, proves that sustainability starts with the ideas of our people. I am proud that KOC employees are leading by example, showing that environmental stewardship and operational excellence go hand in hand."
                     </blockquote>
                   </div>
                   
